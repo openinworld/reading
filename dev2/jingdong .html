@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wake</title>
+   <style>
+    /* *{
+        margin: 0;
+        padding: 0;
+    } */
+    /* 动态伪类 link 未访问的链接 状态  visited  已经访问的状态  hover 鼠标滑过链接的状态
+    active  鼠标按下去时的状态
+    */
+    a:visited{
+        color: aquamarine;
+    }
+
+    a:hover{
+        color: blueviolet;
+    }
+    a:active{
+        color:violet
+    }
+    div{
+        color: aqua;
+    }
+    div ul li  {
+        color: black;
+    }
+   </style>
+</head>
+<body>
+    <div >
+            <!-- 不要搞心态 -->
+            <h3>3级标签11</h3>
+            <ul>
+                <li>无序列表</li>
+            </ul>
+
+            <ol>
+                <li>有序列表</li>
+            </ol>
+            <dl>
+                <dt>总部</dt>
+                <dd>分部</dd>
+                <!-- 尾部的连接介绍 -->
+            </dl>
+            <!-- 超链接属性 -->
+            <a href="#" title="觉醒之战">假的超链接</a>
+            <a href="#" target="_blank">跳动的超链接</a>
+            <a href="ikun .rar" >点击下载</a>
+            <a href="http://www.baidu.com">百度一下</a>
+            <!-- 绝对路径全和相对路径自身参考 -->
+            <img src="images/ikun.jpg" alt=""> 
+             <!-- ../image是向上访问 -->
+            <!-- 表格 -->
+            <!-- 表格合并需要删除单元格 -->
+            <table width="500px" height="500px" border="1px" bordercolor="red" bgcolor="yellow" 
+                cellspacing="0px" cellpadding="0px">
+                <tr align="center">
+                    <td colspan="3">&nbsp;1</td>
+                    <!-- <td>2</td> -->
+                    <!-- <! --<td>3</td>  --> -->
+                </tr>                
+                <tr  >
+                    <td rowspan="2">4</td>
+                    <td >15645</td>
+                    <td>6</td>
+                </tr>                
+                <tr align="right">
+                    <!-- <td >7</td> -->
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </table> 
+                <!-- 项目增补单 -->
+            <table width="2000px" height="900px" bgcolor="white" border="1px" bordercolor="yellow" cellspacing="0px" cellpadding="0">
+                <tr align="center">
+                    <td>序号</td>
+                    <td>维修项目及更换配件</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>工时费</td>
+                    <td>合计</td></td>
+                    <td>故障原因</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                
+                <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                
+                <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                
+                <tr>
+                    <td>6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                
+                <tr>
+                    <td rowspan="4">7</td>
+                    <td></td>
+                    <td colspan="2" rowspan="4">1</td>
+                    <!-- <td></td> -->
+                    <td rowspan="4"></td>
+                    <td rowspan="4"></td>
+                    <td rowspan="4"></td>
+                    <td rowspan="4">1</td>
+                </tr>                
+                <tr>
+                    <!-- <td>8</td> -->
+                    <td></td>
+                    <!-- <td colspan="2" rollspan="4">1</td> -->
+                    <!-- <td></td> -->
+                    <!-- <td>1</td> -->
+                </tr>
+                <tr>
+                    <!-- <td>9</td> -->
+                    <td></td>
+                    <!-- <td colspan="2">1</td> -->
+                    <!-- <td></td> -->
+                    <!-- <td>1</td> -->
+                </tr>                
+                <tr>
+                    <!-- <td>10</td> -->
+                    <td></td>
+                    <!-- <td colspan="2">1</td> -->
+                    <!-- <td></td> -->
+                    <!-- <td>1</td> -->
+                </tr>
+               
+                <tr >
+                    <td colspan="2">备件费用小计:</td>
+                    <td colspan="5">工时费用小计：</td>
+                    <td>合计：</td>
+                </tr>
+            </table>
+                <!-- 表单  -->
+            <form  name="用户名" method="" action="">
+                用户名 : <input type="text " name="use_id" value="输密码啊" maxlength="10" size="50px"> <br>
+                密码框：<input type="password" name="use_mm" id="">
+                提交：<input type="submit" name="" id="" value="登录">
+                重置<input type="reset" name="" id="" value="清空">
+                空按钮 <input type="button" name="" id="">
+                男：<input type="radio" name="sex" id="" value="男">
+                女：<input type="radio" name="sex" id="" value="女">
+                游泳<input type="checkbox" name="like" id="" value="游泳">
+                健身<input type="checkbox" name="like " id="" value="健身">
+                王者<input type="checkbox" name="like" id="" value="王者">
+
+            </form>          
+                <!-- css的内联样式权重最大和外部样式表权重较小   写在head的中-->
+                <style>
+                    div{
+                        width: 800px;
+                        height: 800px;
+                    }
+                </style>    
+                <link rel="stylesheet" href="css.ikun.css">
+                <style type="text/css">
+                    @import url(css.ikun.css);
+                </style>
+                <!-- 不建议使用import 后加载-->
+                <!-- CSS选择器id class #id_uer .class_user 子类选择器 ul>li>.two
+                 *通配符选择器 -->
+                 <style>
+                        div{
+                            color: red;
+                            width: 200px;
+                            height: 200px;
+                            background-color: black;
+                            margin-top:10px ;
+                        }
+                        #two{
+                            color: yellowgreen;
+                        }
+                        .three{
+                            color: aqua;
+                        }
+                 </style>
+                <div>
+                    选择器权重
+                    <a href="image/权重.jpg">查看相关知识</a>
+                </div>
+                <div id="two" class="three">我是id第一名</div>
+                <div class="three">我是class第二名</div>
+                <div>我是元素div 第三名</div>
+                <!-- ccs文字属性 文字大小 字体 加粗 行高-->
+                <style  >
+                    .word{
+                        font-size:40px ;
+                        font-family: 'Gill Sans', '宋体', Calibri, 'Trebuchet MS', sans-serif;
+                        line-height: 150%;
+                        font-weight:bold;
+                        font-style:oblique ; /*倾斜方式*/
+                        /* font：加粗 倾斜  大小 字体 */
+                    /**//**/
+                    }
+                </style>
+                <div class="word" style="width: 500px; height:600px">
+                    我是文字属性的标签 <br>
+                    注释的两种方法 alt+shift+A 块注释  ctrl+/ 行注释
+                </div>
+                 <!-- 文本样式 颜色 大小写 文本小型大写字母 文本对齐方式 文本修饰  首行缩进 字间距 词间距 -->
+                 <div style="
+                font-size: larger;
+                color:red ; 
+                color:rgba(0,255,255,1) ;
+                text-transform:uppercase;
+                font-variant:small-caps ; 
+                text-align: justify;
+                vertical-align: top;
+                text-decoration: underline;
+                text-indent: 2em;
+                letter-spacing: 2em;
+                word-spacing: 2em;
+                 "
+                 >我是可以改变文本的样式  hdjkaj qreqwr</div>
+                <!-- 列表修饰属性 -->
+                <style>
+                     .list{
+                        font-size: large;
+                        list-style-type: none;
+                        list-style-image:url(image/ikun.jpg);
+                        list-style-position: inside;
+                    }
+                </style>
+                <ul class="list" id="list">
+                    aaa
+                    <li>aaa</li>
+                    <li>aaa</li>
+                    <li>aaa</li>
+                    <li>aaa</li>
+                    <li>aaa</li>
+                </ul>
+                <ol class="list"id="list">
+                    <li>bbbbbb</li>
+                    <li>bbbbbb</li>
+                    <li>bbbbbb</li>
+                    <li>bbbbbb</li>
+                </ol>
+                <!-- 边框属性 -->
+                <style >
+                    .line1{
+                        width: 200px;
+                        height: 200px;
+                        background-color: black;
+                        margin-top: 20px;
+                        border: solid 4px;
+                    }
+                    .line2{
+                        border-bottom: double 8px;
+                    }
+                    .line3{
+                        border:dashed 8px ;
+                        border-right:none ;
+                    }
+                    .line4{
+                        border-style: none dashed;
+                        border-width:8px ;
+                    }
+                </style>
+                <div class="line1">四边的边框</div>
+                <div class="line2" class="five">下边框的双实线</div>
+                <div class="line3">虚线右边无边框</div>
+                <div class="line4">上下无边框 左右是虚线</div>
+                <!-- 背景属性 -->
+                <style  >
+                    body{
+                        /* background-image: url(image/权重.jpg);  */
+                        background-attachment: fixed;
+                        
+                    }
+                    .picture {
+                        /* background-color: red ;
+                        background-image: url(image/ikun1.jpg);
+                        background-repeat: no-repeat;
+                        background-position: center top; */
+                        background-position: 100px  50px;
+                        width: 400px;
+                        height: 400px;
+                        /* background: red url(image/ikun1.jpg) no-repeat center top; */
+                    }
+                    /* .picture{
+                        background-position: center top;
+                    } */
+                </style>
+                
+                <div class="picture">
+                        <!-- <div class="picture1" >
+
+                        </div> -->
+                </div>
+                <!-- 元素浮动和导航栏 -->
+                <style>
+                    *{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .nav{
+                        width: 1200px;
+                        height: 400px;
+                        overflow: hidden;
+                        border: 2px dashed;
+                    }
+                    .nav ul{
+                        overflow: hidden;
+                    }
+                    .nav ul li{
+                        width: 296px;
+                        height: 100px;
+                        background-color: red;
+                        border-right: 4px dashed;
+                        float: left;
+                        text-align: center;
+                        line-height: 100px;   
+                    }
+                    .nav ul li a{
+                        color:aliceblue ;
+                        font-size: larger;
+                    }
+
+                </style>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">111111</a></li>    
+                        <li><a href="#">111111</a></li>    
+                        <li><a href="#">111111</a></li>    
+                        <li><a href="#">111111</a></li>    
+                    </ul>
+                </div>
+                <!-- <style>
+                    .wandp img{
+                        /* float: left; 图片浮动不会脱离文档而是文字环绕*/
+                    }
+                </style> -->
+                <div class="wandp">
+                    <img src="image/ikun.jpg" alt="">
+                    元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+                    元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+                    一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+                    
+                    
+                </div>
+                <!-- 盒模型 margin上下重叠只会显示最大的值 左右是相加 脱离文档流的时候都是叠加的 -->
+                <!-- 文本溢出 outline:none 取消焦点框-->
+                <div style="width: 300PX; height:200px ; overflow: hidden; white-space:nowrap;" >
+                    CSS 指层叠样式表 ( Cascading Style Sheets )
+
+                        样式定义如何显示 HTML 元素
+
+                        样式通常存储在样式表中
+
+                        把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题
+
+                        外部样式表可以极大提高工作效率
+
+                        外部样式表通常存储在 CSS 文件中
+
+                        多个样式定义可层叠为一
+
+                        样式对网页中元素位置的排版进行像素级精确控制                    CSS 指层叠样式表 ( Cascading Style Sheets )
+
+                        样式定义如何显示 HTML 元素
+
+                        样式通常存储在样式表中
+
+                        把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题
+
+                        外部样式表可以极大提高工作效率
+
+                        外部样式表通常存储在 CSS 文件中
+
+                        多个样式定义可层叠为一
+
+                        样式对网页中元素位置的排版进行像素级精确控制
+                </div>
+
+                <div style="width: 1200px;  height: 100px; background:blue;">
+                  fghjsgsgfshj
+                </div>
+              <a href="#" style="width:200px; height: 200px; background-color: yellow; margin: 40px; position: absolute; position: relative; position: fixed; position: sticky;left: 99px; top: 10px;; padding: 90px;">123</a>
+              <!-- 元素转换 dispaly inlne block  inline-block 图片垂直对齐需要span的作为参考物 -->
+              <!-- html position absolute relative fixed sticky 属性的使用 父元素相对 子元素绝对  z-index 层级 -->
+              <!-- 命名锚点链接 -->
+              <br>
+              <br>
+              <br>              <br>
+              <br>
+              <br>              <br>
+              <br>
+              <br>
+               <a href="#img01">直达ikun属性</a>
+              <a href="#img02">直达ikun01属性</a>
+              <a href="#img03">直达权重属性</a>
+              <img src="./image/ikun1.jpg" alt="" id="img01" style="width: 200px; height: 300px; background:red">
+              <img src="./image/ikun.jpg" alt="" id="img02"style="width: 200px; height: 300px; background:red">
+              <img src="./image/权重.jpg" alt="" id="img03"style="width: 200px; height: 300px; background:red">
+
+
+            <!-- 宽度自适应  width:calc(100%  - 200px) 脱离文档流的 不设置高度 可以设置left right 的宽度来判断
+                    高度自适应：当想让div参考浏览器时需要给Boby，html 设置高度为100%SS  min-width:100px max-height:100px 浮动脱离文档流-->
+              <a href="./image/mind1.jpg">查看最小高度解决方法，主要是浏览器的兼容问题</a>
+            <div style="width: 100%; height: 100% ">
+                hdsjkahajd
+            </div>
+            <!-- css3圆角属性 border-radius 做出圆形和三角形的操作 -->
+            <div style="width:100px; height: 100px; border-radius:50%">
+                qaz wsx edc rfv tgb yhn ujm ik, ol. p;/
+            </div>
+            <div style="width:400px; height: 200px; border-radius:50px">
+                qaz wsx edc rfv tgb yhn ujm ik, ol. p;/
+            </div>            
+            <div style="width: 0;height: 0;background-color: white; border: 200px solid red;border-color:red transparent yellow transparent;  border-bottom:0;" >
+            </div>
+            <!-- 表单表格和bfc计算模式 --> 
+            
+            <!-- css3的渐变和过度属性   -->
+    </div>
+                
+</body>
+</html>

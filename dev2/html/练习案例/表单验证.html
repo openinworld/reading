@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证</title>
+    <script src="表单验证.js"></script>
+</head>
+<style type="text/css">
+    .box {
+        display: flex;
+        /*定义子级元素垂直居中*/
+        align-items: center;
+        /* 定义子级元素水平居中 */
+        justify-content: center;
+        background-color: rgb(236, 236, 171);
+    }
+    
+    input {
+        background: none;
+        outline: none;
+        border: 0px;
+        width: 100%;
+        background-color: rgb(248, 246, 246);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <div class="container box">
+
+        <form id="userFrom" method="get" action="#">
+            <div class="col-md-12" style="text-align: center;">
+                <h1>表单提交</h1>
+            </div>
+            <div class="col-md-12">
+                用户名：
+                <div>
+                    <input type="text" id="username" name="username">
+                </div>
+                <span id="usernameError"></span>
+                <br>
+            </div>
+            <div class="col-md-12">
+                电话：
+                <div>
+                    <input type="text" id="telnumber" name="telnumber">
+                </div>
+                <span id="telnumberError"></span>
+                <br>
+            </div>
+            <div class="col-md-12">
+                密码：
+                <div>
+                    <input type="text" id="password" name="password">
+                </div>
+                <span id="passwordError"></span>
+                <br>
+            </div>
+            <div class="col-md-12">
+                确认密码：
+                <div>
+
+                    <input type="text" id="confirmPwd" name="confirmPwd">
+                </div>
+                <span id="confirmPwdError"></span>
+                <br>
+            </div>
+            <div class="col-md-12">
+                邮箱地址：
+                <div><input type="text" id="email" name="email"></div>
+                <span id="emailError"></span>
+                <br>
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="提交信息" id="submitBtn"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="重置信息" id="resetBtn">
+        </form>
+    </div>
+</body>
+
+</html>

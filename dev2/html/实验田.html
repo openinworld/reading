@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/animate.js"></script>
+    <style>
+        .silder {
+            margin-left: 1600px;
+            text-align: center;
+            position: relative;
+            line-height: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        
+        .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 200px;
+            height: 100px;
+            background-color: rgb(132, 0, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="silder">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var silder = document.querySelector('.silder');
+        var con = document.querySelector('.con');
+        var span = document.querySelector('span');
+        silder.addEventListener('mouseenter', function() {
+            animate(con, -200, function() {
+                span.innerHTML = '→';
+            });
+        })
+        silder.addEventListener('mouseleave', function() {
+            animate(con, 0, function() {
+                span.innerHTML = '←';
+            });
+        })
+
+        function animate(obj, rug, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // 步长值
+                // var step = Math.ceil((rug - obj.offsetLeft) / 10);
+                var step = (rug - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == rug) {
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+                // 回调函数写道计时器结束里
+            }, 15)
+        }
+    </script>
+</body>
+
+</html>

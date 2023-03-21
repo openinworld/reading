@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js的练习</title>
+
+    <script>
+        // =====================================变量的交换
+        // var age =prompt('请输入你的年龄')
+        // alert(age);
+        // var temp
+        // var apple ='红苹果';
+        // var apple1 =' 青苹果';
+        // temp =apple
+        // apple = apple1
+        // apple1 =  temp
+        // console.log(apple );
+        // console.log(apple1)
+        // ==================================数据类型 
+        /*         var num =10;
+                var std = "pink";
+                // 判断是否为数字
+        /*         console.log(isNaN(22)); 
+                console.log(isNaN('ZHUIZKUN'));
+                alert( "教师的骄傲开发建安大飞机开发商\n借s我街坊邻居奥斯卡地方啥宽带就分手 "); */
+        //判断字符串长度
+        /*         var std = 'fjkasjfkajkldfjaskldjalkdjalk';
+                console.log(std.length);
+                console.log('沙漠'+'12313');
+                console.log('12'+12);
+                var age=16;
+                console.log('我今年'+age+'岁');
+                // '无极'+age+'魔道' 引引加加
+                var age =prompt('请输入你的年龄')
+                age = age + 112  //prompt传过来的是字符串
+                alert('您明年'+age+'岁')
+                // ===========================布尔值 undefined
+                var flag = tdue ; 
+                var flag = false ;
+                console.log(ture+1);
+                console.log(false+1); //ture参与运算是1 而falsez 则是0 
+                var variable = undefined ;
+                console.log(variable+1)//undefined 和数字相加最后的结果是NaN;
+                var space =  null ;
+                console.log(space + "zhuah");//nullzhuah
+                console.log(space + 1);//1 */
+        // ================================检测变量名 typeof
+        // var age =prompt('请输入你的名字')
+        // console.log(typeof age); //stding
+        // var num =10;
+        // console.log(typeof num);
+
+        // 数据类型转换 1.转换为字符串 2.转换为数字 3.转换为布尔值
+        // var num = 1;
+        // // var std = num.toStding()
+        // // console.log(std);
+        // var std = Stding(num);
+        // console.log(std)
+        // console.log(num+'');
+        // ======================================字符串转换为数字型 pareseInt 整数 parseFloat 浮点数
+        /*         var num = prompt('请输入你的年龄');
+                console.log(parseInt(num));
+                var std = '123';
+                console.log(Number(std));
+                console.log('12'-'12312'); */
+
+        // ================================计算年龄
+        // var age = prompt('请输入你的出生年')
+        //  age = parseInt(age) //多次一举 减法有隐式转换
+        //  age = 2023 - age
+        //  alert('您今年'+age+'岁')
+        // ===================================简单加减法
+        // var num1 = prompt('请输入第一个数值');
+        // var num2 = prompt('请输入第二个数值');
+        // num1=parseInt(num1);
+        // num2=parseInt(num2);
+        // num = num1 + num2;
+        // alert(num)
+        // =========================================转换为布尔值 空和否定的值会改变成false boolean()
+        // var name = prompt('请输入您的名字');
+        // var age = prompt('请输入您的年龄');
+        // var sex = prompt('请输入您的性别');
+        // alert('您的名字:'+name +"\n"+'您的年龄:'+age+"\n"+'您的性别:'+sex )  
+        // ============================运算符
+        // console.log(8 % 2); //取余数
+        // num = 0.1 + 0.2;
+        // console.log(num == 0.3); //浮点数不等于整数 num = 1+1 是一个表达式
+        // // 前置递增运算符++i 先加1 后返回值
+        // // 后置递增运算符 i++先返回  后自加
+        // // 比较运算符 > < = ==默认转换数据类型，字符串转换为数据型 ===全等 会对比数值和数据类型
+        // // 与&& 全对  或|| 一个对  非 !取反
+        // console.log(3 > 2 && 3 < 1);
+        // console.log(3 > 2 || 4 < 3);
+        // console.log(!tdue); ===
+        // === === === === === === === === === === === =
+        // 逻辑与短路运算 表达式1 结果为真 则返回表达式2, , 表达式1为假, 那么返回表达式1
+        // console.log(123 && 456);
+        // console.log(0 && 123);
+        // 如果有空的或者否定的为假 其余的是真的 0 '' null undfined NaN
+        // 逻辑或短路运算 反过来显示   
+        // console.log(123 && 0 || 234);
+        // console.log(123 || 234 || 0);
+        // var num = 0
+        // console.log(235 || num++);
+        // console.log(num);
+        // ==============================================赋值运算符
+        // var num = 5;
+        // num = num + 2;
+        // num += 2;
+        // var d = !c || b && a; //先算与再算或 
+        // console.log(d);
+        // if语句
+        // if (表达式判断) {
+        //     执行语句
+        // }
+        // var age = prompt('请输入你的年龄');
+        // if (age <= 18) {
+        //     alert('您未满十八岁，不允许进入')
+
+        // } else {
+        //     alert('欢迎光临~')
+        // }
+
+        // var year = prompt('请输入年份');
+        // if (year % 4 == 0 && (year % 100 != 0) || year % 400 == 0) {
+        //     alert('今年是闰年')
+        // } else {
+        //     alert('今年是平年')
+        // }
+        // var name = prompt('请输入您的名字查询');
+        // if (name == '刘德华') {
+        //     alert('恭喜您中奖了')
+        // } else {
+        //     alert('很遗憾没有中奖')
+        // } ===
+        // === === === === === === 多分支语句
+        // if () {
+
+        // } else if () {
+
+        // } else if () {
+
+        // } else {
+
+        // }
+        // var score = prompt('请输入你的成绩');
+        // if (score >= 90) {
+        //     alert('A')
+        // } else if (score < 90 && score >= 80) { //p判断条件大于80分就行，90以上不执行
+        //     alert('B')
+        // } else if (score < 80 && score >= 70) {
+        //     alert('C')
+        // } else if (score < 70 && score >= 60) {
+        //     alert('D')
+        // } else {
+        //     alert('E')
+        // }
+        // ==============================三元表达式  条件表达式结果为真返回表达式1 为假返回表达式2
+        // var num = 9;
+        // var result = num < 10 ? '对的' : '不对';
+        // console.log(result);
+        // =============================补零
+        // var time = prompt('输入倒计时');
+        // var result = time < 10 ? '0' + time : time;
+        // alert(result)
+        // ==================================switch 语句
+        // var num = 2
+        // switch (num) {     //num需要与case里面的值全等 不写break会一直执行
+        //     case 2:
+        //         console.log('这是2');
+        //         break;
+        //     case 3:
+        //         console.log('这是3');
+        //         break;
+        //     case 4:
+        //         console.log('这是4');
+        //         break;
+        //     default:
+        //         console.log('这是未知数');
+        // }
+        // ============================查询水果
+        // var fruit = prompt('请输入您的水果');
+        // switch (fruit) {
+        //     case '苹果':
+        //         alert('苹果32元');
+        //         break;
+        //     case '橘子':
+        //         alert('橘子45元');
+        //         break;
+        //     case '香蕉':
+        //         alert('香蕉56元');
+        //         break;
+        //     case '哈密瓜':
+        //         alert('哈密瓜86元');
+        //         break;
+        //     default:
+        //         alert('没有此水果')
+        // }
+        //判断时间段 
+        // var time = prompt('请输入时间');
+        // switch (time) {
+        //     case ('12'):
+        //         alert('中午好');
+        //         break;
+        //     case ('18'):
+        //         alert('傍晚好');
+        //         break;
+        //     case ('23'):
+        //         alert('深夜好');
+        //         break;
+
+        // }
+        //比较两个数的最大值
+        // var a = prompt('请输入第一个数字');v
+        // var b = prompt('请输入第二个数字');
+        // if (a > b) {
+        //     alert(a);
+        // } else {
+        //     alert(b);
+        // }
+        // 用户输入一个数,判断是奇数还是偶数
+        // var a = prompt('请输入一个数字');
+        // if (a % 2 == 0) {
+        //     alert('这是偶数');
+        // } else {
+        //     alert('这是奇数');
+        // }
+        //根据用户输入的数值，返回星期几
+        // var num = prompt('请输入1~7的数字');
+        // switch (num) {
+        //     case ('1'):
+        //         alert('今天星期一');
+        //         break;
+        //     case ('2'):
+        //         alert('今天星期二');
+        //         break;
+        //     case ('3'):
+        //         alert('今天星期三');
+        //         break;
+        //     case ('4'):
+        //         alert('今天星期四');
+        //         break;
+        //     case ('5'):
+        //         alert('今天星期五');
+        //         break;
+        //     case ('6'):
+        //         alert('今天星期六');
+        //         break;
+        //     case ('7'):
+        //         alert('今天星期日');
+        //         break;
+        //     default:
+        //         alert('数字超出')
+        // }
+        // 请客吃饭
+        // var money = prompt('请告诉我有多少钱');
+        // money = parseInt(money)
+        // if (money >= 2000) {
+        //     alert('请大家吃西餐');
+        // } else if (money >= 1500) {
+        //     alert('请大家吃快餐');
+        // } else if (money >= 1000) {
+        //     alert('请大家喝饮料');
+        // } else if (money >= 500) {
+        //     alert('请大家吃棒棒糖');
+        // } else {
+        //     alert('下次把钱带够')
+        // }
+
+        // ================================循环语句
+        // for (var i = 1; i <= 100; i++) {
+        //     console.log('你好吗');
+        // }
+        // for (var i = 1; i <= 100; i++) {
+        //     if (i == 1) {
+        //         console.log('今年我' + i + '岁出生');
+
+        //     } else if (i == 99)(
+        //         console.log('今年我' + i + '岁知天命')
+        //     )
+        //     else {
+        //         console.log('今年我' + i + '岁');
+        //     }
+        // }
+        //     var sum = 0
+        //     for (var i = 1; i <= 100; i++) {
+        //         sum += i;
+        //         // sum = sum + i;
+        //     }
+        //     console.log(sum);
+        //
+        // var average1 = 0;
+        // var average2 = 0;
+        // sum1 = 0;
+        // sum2 = 0;
+        // for (i = 1; i <= 100; i++) {
+        //     if (i % 2 == 0) {
+        //         sum1 += i;
+        //     } else {
+        //         sum2 += i;
+        //     }
+        // }
+        // average1 = sum1 / 50;
+        // average2 = sum2 / 50;
+        // console.log(average1);
+        // console.log(average2);
+        // =========================求平均成绩
+        // var num = prompt('请输入班级总人数');
+        // sum = 0;
+        // for (var i = 1; i <= num; i++) {
+        //     var score = prompt('请输入第' + i + '个成绩');
+        //     // score = parseInt(score);
+        //     sum += parseInt(score)
+        // }
+        // average = sum / num;
+        // console.log(average);
+        // var std = '';
+        // var num = prompt('请输入星星数')
+        // for (var i = 1; i <= num; i++) {
+        //     std += '♥'
+        // }
+        // console.log(std);
+        // var std = '';
+        // var num = prompt('请输入星星数行')
+        // var num1 = prompt('请输入星星数列')
+        // for (var i = 1; i <= num; i++) {
+        //     // std += '♥'
+        //     for (var a = i; a <= num; a++) {
+        //         std += '♥'
+        //     }
+        //     std += "\n"
+        // }
+        // console.log(std); 
+        // === === === === === === === == 正三角
+        // var std = '';
+        // var num = prompt('请输入星星数行')
+
+        // for (var i = 1; i <= num; i++) {
+        //     i
+        //     // std += '♥'
+        //     for (var a = 1; a <= i; a++) {
+        //         std += '♥'
+        //     }
+        //     std += "\n"
+        // }
+        // console.log(std);
+        // ============================九九乘法表
+        // var std = '';
+        // for (var i = 1; i <= 9; i++) {
+        //     for (var a = 1; a <= i; a++) {
+        //         sum = i * a
+        //         std += a + 'x' + i + '=' + sum + '\t'
+        //     }
+        //     std += "\n"
+        // }
+        // console.log(std);
+        //while循环语句
+        // var num = 1
+        // while (num <= 100) {
+        //     num++;
+        //     console.log('nihao');
+        // }
+        // var num = 0;
+        // var sum = 0;
+        // while (num <= 100) {
+        //     sum += num;
+        //     num++;
+        // }
+        // console.log(sum);
+
+        // var love = prompt('你爱我吗');
+        // while (love !== '我爱你') {
+        //     love = prompt('你爱我吗')
+        // }
+        // alert('我也爱你')
+        // do while语句
+        // do {
+
+        // } while(){
+
+        // }
+        // var i = 1;
+        // do {
+        //     console.log('战鹰战鹰我' + i + '岁了');
+        //     i++
+        // } while (i <= 100)
+
+        // do {
+        //     var love = prompt('你爱我吗')
+        // } while (love !== '我爱你')
+        // alert('我也爱你')
+        //continue 关键字
+        // for (var i = 1; i <= 5; i++) {
+        //     if (i == 3) {
+        //         continue;
+        //     }
+        //     console.log('我正在吃第' + i + '个包子');
+        // }
+        // ==================除能被7整除之外的整数和
+        // var sum = 0;
+        // for (i = 1; i <= 100; i++) {
+        //     if (i % 3 == 0) {
+        //         continue;
+        //     } else {
+        //         sum += i;
+        //     }
+        // }
+        // console.log(sum);
+        // break关键字 退出整个循环  
+        // for (var i = 1; i <= 5; i++) {
+        //     if (i == 3) {
+        //         break;
+        //     }
+        //     console.log('我正在吃第' + i + '个包子')
+        // }
+        // ==============简易提款机
+        // var sum = 100;
+        // var list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+        // switch (list) {
+        //     case ('1'):
+        //         money = prompt('请输入您要存的金额');
+        //         sum += parseInt(money);
+        //         alert('您的余额还有' + sum + '元');
+        //         list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+
+        //     case ('2'):
+        //         money = prompt('请输入您要取的金额');
+        //         sum = sum - parseInt(money);
+        //         alert('您的余额还有' + sum + '元');
+        //         list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+        //     case ('3'):
+        //         alert('您的余额还有' + sum + '元');
+        //         list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+        //     case ('4'):
+        //         alert('您现在正在退出');
+        //         break;
+        // }
+
+        // var sum = 100;
+        // var list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+        // if (list == '1') {
+        //     money = prompt('请输入您要存的金额');
+        //     sum += parseInt(money);
+        //     alert('您的余额还有' + sum + '元');
+        //     list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+
+        // } else if (list = '2') {
+        //     sum = sum - parseInt(money);
+        //     alert('您的余额还有' + sum + '元');
+        //     list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+
+        // } else if (list = '3') {
+        //     alert('您的余额还有' + sum + '元');
+        //     list = prompt('请输入您要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+        // } else if (list = '4') {
+        //     alert('您现在正在退出');
+        // }
+        // ===================数组
+        // 创建数组
+        /*         var arr = new Array();
+                var arr = [];
+                var arr = ['小白', 12, 'ture'];
+                console.log(arr[1]); */
+        //遍历数组：
+        // var num = ['关羽', '张飞', '赵云', '马超', '黄忠', '刘备', '姜维'];
+        // for (i = 0; i < num.length; i++) {/*  */
+        //     console.log(num[i]);
+        // } 
+        // ===========数组求和及平均值
+        // var arr = [2, 6, 1, 7, 4];
+        // var sum = 0;
+        // for (i = 0; i < arr.length; i++) {
+        //     sum += arr[i];
+        // }
+        // Average = sum / arr.length;
+        // console.log(sum);
+        // console.log(Average); 
+        // ===============寻找最大值
+        // var arr = [1, 4, 6, 8, 12, 65, 99];
+        // var max = arr[0];
+        // for (i = 0; i <= arr.length; i++) {
+        //     if (max < arr[i]) {
+        //         max = arr[i]
+        //     }
+        // }
+        // console.log(max);
+        // ===============寻找最小值
+        // var arr = [11, 14, 6, 8, 12, 65, 99];
+        // var min = arr[0];
+        // for (i = 0; i <= arr.length; i++) {
+        //     if (min > arr[i]) {
+        //         min = arr[i]
+        //     }
+        // }
+        // console.log(min);
+        // var arr = ['red', 'green', 'pink', 'blue'];
+        // std = '';
+        // for (i = 0; i < arr.length; i++) {
+        //     std += arr[i] + '|'
+        // }
+        // console.log(std);
+        // 新增数组元素
+        // var arr = ['12', '12', '32', '12'];
+        // console.log(arr.length);
+        // arr.length = 9;
+        // arr[4] = '56';
+        // console.log(arr);
+        // 填入数组数字
+        // var arr1 = [];
+        // for (var i = 0; i < 10; i++) {
+        //     arr1[i] = i + 1;
+        // }
+        // console.log(arr1);
+        // 筛选数组
+        // var arr = [2, 16, 8, 9, 45, 45, 78, 98, 455, 78];
+        // var arr1 = [];
+        // var j = 0;
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] > 10) {
+        //         arr1[j] = arr[i]; //把j改成arr.length 0 1
+        //         j++;
+        //     }
+        // } 
+        // console.log(arr1);
+        // 数组去零
+        // var arr = [1, 12, 36, 0, 45, 0, 787, 56, 0, 45, 87, 0];
+        // var arr1 = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] != 0) {
+        //         arr1[arr1.length] = arr[i];
+        //     }
+        // }
+        // console.log(arr1);
+        //反转数组
+        // var arr = [1, 12, 36, 0, 45, 0, 787, 56, 0, 45, 87, 0];
+        // var arr1 = [];
+        // j = 0;
+        // for (var i = arr.length - 1; i >= 0; i--) {
+        //     arr1[j] = arr[i];
+        //     j++;
+        // }
+        // console.log(arr1);
+        // var arr = [1, 12, 36, 0, 45, 50, 787, 56, 10, 45, 87, 50];
+        // var arr1 = [];
+        // max = 0;
+        // for (i = 1; i < arr, length; i++) {
+        //     if(){
+
+        //     }
+        // }
+        // 冒泡排序
+        // var arr = [2, 3, 5, 6, 9, 4, 45, 356, 748, 12, 45, 68];
+        // for (var i = 0; i < arr.length - 1; i++) {
+        //     for (var j = 0; j < arr.length - 1; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             var tmp = 0;
+        //             tmp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = tmp;
+        //         }
+        //     }
+        // }
+
+        // console.log(arr);
+        // ================================函数
+        // function getsum(num1, num2) {
+        //     var sum = 0;
+        //     for (i = num1; i <= num2; i++) {
+        //         sum += i;
+
+        //     }
+        //     console.log(sum);
+        // }
+        // getsum(1, 100);
+        // 形参和实参 形参多结果为NaN  实参多结果为形参数目量
+        // function(形参1， 形参2) {
+
+        // }
+
+        // function（ 实参， 实参）return会把函数值返回给调用者 argument 展示的是一个数组的性质
+        // ==================利用函数封装方式，反转一个任意数组加冒泡排序
+        // function reverse(arr) {
+        //     var newarr = [];
+        //     for (var i = arr.length - 1; i >= 0; i--) {
+        //         newarr[newarr.length] = arr[i];
+        //     }
+        //     return newarr;
+        // }
+        // function sort(arr) {
+        //     for (var i = 0; i < arr.length - 1; i++) {
+        //         for (var j = 0; j < arr.length - i - 1; i++) {
+        //             if (arr[j] > arr[j + 1]) {
+        //                 var tmp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = tmp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // var re = sort([3, 9, 4, 2, 8, 12, 69, 89, 899]);
+        // console.log(re);
+        // =================判断是否为闰年
+        // function isrunYear(year) {
+        //     var flag = false;
+        //     if (year % 4 == 0 && year % 100 != 0 || year % 4 == 0) {
+        //         flag = tdue;
+        //     }
+        //     return flag;
+        // }
+        // console.log(isrunYear(2005));
+        // =============================函数调用
+        // function fn1() {
+        //     console.log(11);
+        //     fn2();
+        //     console.log('fn');
+        // }
+
+        // function fn2() {
+        //     console.log(222);
+        //     console.log('fn2');
+        // }
+        // fn1();
+        // 函数声明表达式
+        /*         function fn() { //自定义函数(命名函数)
+
+                }
+                fn();
+                var fun = function() { //声明函数表达式，匿名函数
+
+                }
+        fun(); */
+        // ====================全局作用域（全局的变量，在函数里面没有声明的变量叫做全局变量），局部作用域（函数内的）块级作用域
+        // =====================作用域链就近原则
+        // ============================预解析，将变量和函数提升到作用域前面，但是不赋值，函数不执行
+        // var a = 18;
+        // f1();
+
+        // function f1() { //函数变量 都在提升 变量值却是最后的赋值 所以a是undefined
+        //     var b = 9;
+        //     console.log(a);
+        //     console.log(b);
+        //     var a = '123';
+        // }
+        // ==================案例4 经典
+        // f1();
+        // console.log(c);
+        // console.log(b);
+        // console.log(a);
+
+        // function f1() {
+        //     var a = b = c = 9;
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        // }
+        // ======================================创建对象
+        // var dog = {
+        //     name: '可可',
+        //     type: '阿拉斯加犬',
+        //     age: '5岁',
+        //     color: 'brownred',
+        //     jineng: ['bark', 'showfilm'],
+        //     say: function() {
+        //         console.log('wo~')
+        //     }
+        // }
+        // console.log(dog['jineng']);
+        // dog.say();
+        // // object 创建对象
+        // var obj = new Object();
+        // obj.uname = '张三丰';
+        // obj.age = 18;
+        // obj.sex = '男';
+        // obj.fun = function() {
+        //     console.log('hi~')
+        // }
+        // obj.fun();
+        // //构造函数创建对象
+        // function DOG(uname, age, sex) {
+        //     this.name = uname;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.sing = function(sang) {
+        //         console.log(sang);
+        //     }
+        // }
+        // var gogo = new DOG('阿拉斯加', 2, '公')
+        // console.log(gogo.name);
+        // gogo.sing('dingdingdang');
+
+        // function HONOR(uname, type, blood, attack) {
+        //     this.name = uname;
+        //     this.type = type;
+        //     this.blood = blood;
+        //     this.attack = attack;
+
+        // }
+        // var lianpo = new HONOR('廉颇', '力量型', '500', '近战');
+        // var houyi = new HONOR('后裔', '射手型', '100', '远程', )
+        // console.log(lianpo.name);
+        // ================================对象的遍历
+        // var dog = {
+        //     name: '可可',
+        //     type: '阿拉斯加犬',
+        //     age: '5岁',
+        //     color: 'brownred',
+        //     jineng: ['bark', 'showfilm'],
+        //     say: function() {
+        //         console.log('wo~')
+        //     }
+        // }
+        // for (var k in dog) {
+        //     console.log(k);
+        //     console.log(dog[k]);
+        // }
+        // ===================math数据类型
+        // console.log(Math.PI);
+        // 封装一个math函数
+        //         var myMath = {
+        //             PI: 3.1415926535,
+        //             max: function() {
+        //                 var max = arguments[0];
+        //                 for (var i = 1; i < arguments.length; i++) {
+        //                     if (arguments[i] > max) {
+        //                         max = arguments[i];
+        //                     }
+        //                 }
+        //                 return max;
+        //             }
+        //         }
+        //         console.log(myMath.max(2, 9, 56, 77, 56));
+        //
+        //
+    </script>
+    <!-- =======================================倒计时 -->
+    <!-- instanceof  运算符 它可以检测是否为数组 Array.isArray()-->
+    <!-- 添加删除数组元素 -->
+
+
+</head>
+
+<body>
+    <!-- <div id="c">q151
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="m">545asdad4</div>
+    <button id="shk">shidh </button>
+     ========================================dom获取元素 -->
+    <!--<script>
+        var v = document.getElementById('c');
+        console.log(v);
+        console.log(typeof v);
+        console.dir(v);
+        var di = document.getElementsByTagName('div');
+        console.log(di);
+        console.log(di[1]);
+        // var mah = [5, 6, 98, 56, 533];
+        // mah.push(5);
+        // console.log(mah);
+        var cc = document.getElementsByTagName('div');
+        console.log(cc[0].getElementsByTagName('div'));
+        var jkj = document.getElementById('c');
+        console.log(jkj.getElementsByTagName('div'));
+        var qop = document.querySelector('.m');
+        console.log(qop);
+        var op = document.querySelectorAll('div')
+        console.log(op);
+        // =========================获取html ，body元素
+        var hkjh = document.body;
+        var jklk = document.documentElement;
+        console.log(hkjh);
+        console.log(jklk);
+        var btn = document.getElementsByTagName('button'); //这是为什么不行？
+        console.log(btn[0]); //打印出来的是集合
+        var btn = btn[0]; //选择数组中第一个
+        // var btn = document.getElementById('shk');
+        // console.log(btn);
+        btn.onclick = function() {
+            alert('dhakj');
+        }
+    </script> -->
+    <!-- <div id="ti">
+        显示时间
+    </div>
+
+    <script>
+        var time = document.getElementById('ti');
+        time.onclick = function() {
+            time.innerHTML = getdate();
+        }
+
+        function getdate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getdate();
+            var arr = ['星期日', '星期二', '星期三', '星期四', '星期五', '星期六', '星期一'];
+            var day = date.getday();
+            return '今天是：' + year + '年' + month + '月' + dates + '日' + arr[day];
+        }
+        console.log(getdate());
+    </script> -->
+    <!-- ===============================修改元素---切换图片 -->
+    <!-- <button id="jk">jklj</button>
+    <button id="op">fahkf</button><br>
+    <img src="../image/1.jpg" alt="" title="迪丽热巴" style="height:100px; width: 100px; ">
+    <script>
+        var kj = document.getElementById('jk');
+        var jc = document.getElementById('op');
+        var nm = document.querySelector('img');
+        jc.onclick = function() {
+            nm.src = '../image/2.jpg';
+            nm.title = '妈妈哈哈';
+        }
+        kj.onclick = function() {
+            nm.src = '../image/1.jpg';
+            nm.title = "迪丽热巴";
+        }
+    </script> -->
+    <!-- ====================================根据时间变换提示 -->
+    <!-- <style>
+        #joke {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <div id="joke">
+        JKL
+    </div>
+    <img src="../image/2.jpg" alt="">
+    <script>
+        var jke = document.querySelector('#joke');
+        var ok = document.querySelector('img');
+        var date = new Date();
+        var h = date.getHours();
+        console.log(h); //这个地方不能实时刷新，需要反复修改电脑时间
+        if (h > 6 && h < 12) {
+            ok.src = '../image/4.jpg';
+            jke.innerHTML = '早上好,持续觉醒的一天';
+        } else if (h < 14) {
+            ok.src = '../image/8.jpg';
+            jke.innerHTML = '中午好,持续觉醒的一天';
+
+        } else if (h < 18) {
+            ok.src = '../image/5.jpg';
+            jke.innerHTML = '下午好,持续觉醒的一天';
+        } else {
+            ok.src = '../image/6.jpg';
+            jke.innerHTML = '晚上好,持续觉醒的一天';
+        }
+    </script> -->
+    <!-- ===================================隐藏密码 -->
+    <!-- <div class="box">
+        <label for="">
+            <img src="../image/001.png" alt="" id="eye">
+        </label>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        var eye = document.querySelector('#eye');
+        var pwd = document.querySelector('#pwd');
+        var flag = 0;
+        eye.onclick = function() {
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.src = '../image/002.png';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                eye.src = "../image/001.png"
+                flag = 0;
+
+            }
+
+        }
+    </script> -->
+    <!-- =====================================修改元素属性---关闭二维码 -->
+    <!-- <style>
+        #box {
+            display: block;
+        }
+        
+        i {
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+    <div class="box">
+        <img src="../image/003.png" alt="" id="ma">
+        <i id="ii">x</i>
+    </div>
+    <script>
+        var img = document.querySelector('img');
+        var i = document.querySelector('#ii');
+        var div = document.querySelector('.box')
+        i.onclick = function() {
+            div.style.display = 'none';
+        }
+    </script> -->
+    <!-- ==============================精灵图未待续 还需要等等没有ps
+    <style>
+        #box {
+            width: 900px;
+            height: 900px;
+            display: flex;
+            background-color: yellowgreen;
+            flex-direction: row;
+            flex-flow: row wrap;
+        }
+         
+        .small {
+            width: 300px;
+            height: 300px;
+            flex-shrink: 0;
+            background-color: aqua;
+        }
+    </style>
+    <div id="box">
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+    </div>-->
+    <!-- ==========================================搜索框 -->
+    <!-- <style>
+        input {
+            color: #999;
+        }
+    </style>
+    <div id="search">
+        <input type="text" value="百度一下，你就知道">
+        <button type="submit">搜索</button>
+    </div>
+    <script>
+        var ipt = document.querySelector('input');
+        ipt.onfocus = function() {
+            // ipt.innerHTML = '';
+            console.log('得到了焦点');
+            if (this.value = '百度一下，你就知道') {
+                this.value = ''
+            }
+            this.style.color = 'black' //this的指向问题
+        }
+        ipt.onblur = function() {
+            console.log('失去了焦点');
+            if (this.value === '') {
+                this.value = '百度一下，你就知道';
+            }
+            this.style.color = '#999';
+        }
+    </script> -->
+    <!-- <style>
+        .change {
+            color: red;
+        }
+    </style>
+    <div class="register">
+        <input type="password" value='' class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var p = document.querySelector('p')
+        var h = ipt.value.length;
+
+        ipt.onblur = function() {
+            if (this.value.length > 5 && this.value.length < 17) {
+                p.innerHTML = '输入正确'
+                this.style.color = 'black'
+            } else {
+                p.innerHTML = '输入错误,请输入6~16位密码';
+                p.className = 'change'
+            }
+            console.log(this.value.length);
+        }
+    </script> -->
+    <!-- =============================================排他思想(按钮变色) -->
+    <!-- <style>
+        button {
+            background-color: aqua;
+        }
+    </style>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <script>
+        var btn = document.getElementsByTagName('button');
+        for (var i = 0; i < btn.length; i++) {
+
+            btn[i].onclick = function() {
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].style.backgroundColor = 'aqua';
+                }
+                this.style.backgroundColor = 'red';
+            }
+        }
+        console.log(btn);
+    </script> -->
+    <!-- =================================更换皮肤 -->
+    <!-- <style>
+        div {
+            width: 420px;
+            height: 200px;
+            position: fixed;
+            top: 200px;
+            right: 100px;
+        }
+        
+        img {
+            width: 100px;
+            height: 200px;
+        }
+        
+        li {
+            display: inline-block;
+            width: 100px;
+            height: 200px;
+            user-select: none;
+        }
+        
+        body {
+            background-image: url(../image/water1.webp);
+        }
+    </style>
+    <div>
+
+        <li><img src="../image/water1.webp" alt=""></li>
+        <li><img src="../image/water2.webp" alt=""></li>
+        <li><img src="../image/water3.webp" alt=""></li>
+        <li><img src="../image/water4.webp" alt=""></li>
+
+    </div>
+    <script>
+        var li = document.getElementsByTagName('img');
+        console.log(li[0]);
+        for (i = 0; i < li.length; i++) {
+            li[i].onclick = function() {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script> -->
+    <!-- ==========================表格隔行变色 -->
+    <!-- <style>
+        td {
+            border: 1px solid black;
+        }
+        
+        tr {
+            border: 10px solid aqua;
+        }
+        
+        thead {
+            background-color: aqua;
+        }
+        
+        table {
+            border: 10px solid pink;
+        }
+        
+        tbody {
+            background-color: brown;
+        }
+        
+        .bg {
+            background-color: pink;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <td>代码</td>
+                <td>名称</td>
+                <td>最新公布数据</td>
+                <td>累计净值</td>
+                <td>前单位净值</td>
+                <td>净值增长</td>
+                <td>公布日期</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003446</td>
+                <td>兴金何宜混合A</td>
+                <td>0.99</td>
+                <td>0.212</td>
+                <td>1.232</td>
+                <td>+0.023%</td>
+                <td>2023-02-22</td>
+            </tr>
+            <tr>
+                <td>003446</td>
+                <td>兴金何宜混合A</td>
+                <td>0.99</td>
+                <td>0.212</td>
+                <td>1.232</td>
+                <td>+0.023%</td>
+                <td>2023-02-22</td>
+            </tr>
+            <tr>
+                <td>003446</td>
+                <td>兴金何宜混合A</td>
+                <td>0.99</td>
+                <td>0.212</td>
+                <td>1.232</td>
+                <td>+0.023%</td>
+                <td>2023-02-22</td>
+            </tr>
+            <tr>
+                <td>003446</td>
+                <td>兴金何宜混合A</td>
+                <td>0.99</td>
+                <td>0.212</td>
+                <td>1.232</td>
+                <td>+0.023%</td>
+                <td>2023-02-22</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+        var tr = document.querySelector('tbody').querySelectorAll('tr');
+        for (i = 0; i < tr.length; i++) {
+            tr[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            tr[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+        console.log(tr);
+    </script> -->
+    <!-- ==============================表单全选取消 拓展选择的时候能计算多少钱-->
+    <!-- <style>
+        table {
+            width: 400px;
+            height: 400px;
+            user-select: none;
+        }
+        
+        thead {
+            background-color: blue;
+            height: 110px;
+            user-select: none;
+        }
+    </style>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j.oball" />
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j.tb">
+                <tr>
+                    <th>
+                        <input type="checkbox" />
+                    </th>
+                    <th>iphone</th>
+                    <th>5699</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" />
+                    </th>
+                    <th>iphone</th>
+                    <th>5699</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" />
+                    </th>
+                    <th>iphone</th>
+                    <th>5699</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" />
+                    </th>
+                    <th>iphone</th>
+                    <th>5699</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var joball = document.getElementById('j.oball');
+        // var ths = document.getElementByTagName('tbody').getElementByTagName('input');//这里又不行了
+        var ths = document.getElementById('j.tb').querySelectorAll('input');
+        var flag = joball.checked //这里的变量第二个for循环读取不到//作用域的问题？没研究清楚
+        console.log(ths);
+        flag = false;
+        joball.onclick = function() {
+            console.log(this.checked);
+            // if (joball.checked = false) {
+            flag = true;
+            for (i = 0; i < ths.length; i++) {
+                ths[i].checked = this.checked; //this让body中的复选框跟随全选按钮的属性
+            }
+            // } else {
+            //     joball.checked = false;
+            // }
+        }
+
+        for (i = 0; i < ths.length; i++) {
+            ths[i].onclick = function() {
+                joball.checked = true;
+                // flag = true;
+                console.log(flag);
+                for (i = 0; i < ths.length; i++) {
+                    if (!ths[i].checked) {
+                        // flag = false;
+                        joball.checked = false;
+                        break;
+                    }
+                }
+            }
+        }
+    </script> -->
+    <!-- =========================自定义属性+tab切换布局 -->
+    <!-- <div id="demo">123</div>
+    <script>
+        var div = document.getElementById('demo');
+        console.log(div.id);
+        console.log(div.getAttribute('id'));
+        div.id = 'iop';
+        div.className = 'sad';
+        div.setAttribute('index', 2);
+        div.setAttribute('class', 'ok');
+        div.removeAttribute('class');
+    </script> -->
+    <!-- <style>
+        .tab {
+            width: 500px;
+            height: 400px;
+            background-color: aqua;
+        }
+        
+        .tab_lst {
+            width: 500px;
+            height: 40px;
+            background-color: #999;
+        }
+        
+        li {
+            display: inline-block;
+            width: 80px;
+            line-height: 40px;
+            border-right: 2px solid transparent;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        li:hover {
+            cursor: pointer;
+        }
+        
+        .current {
+            color: slateblue;
+            background-color: pink;
+        }
+        
+        .item {
+            width: 500px;
+            height: 360px;
+            background-color: tomato;
+            display: none;
+        }
+    </style>
+    <div>2131231</div>
+    <div class="tab">
+        <div class="tab_lst">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装内容
+            </div>
+            <div class="item">
+                售后保障内容
+            </div>
+            <div class="item">
+                商品评价内容
+            </div>
+            <div class="item">
+                手机社区内容
+            </div>
+        </div>
+    </div>
+    <script>
+        var tab_lst = document.querySelector('.tab_lst');
+        console.log(tab_lst);
+        var lis = tab_lst.querySelectorAll('li');
+        var item = document.querySelectorAll('.item')
+        console.log(item);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function() {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = ''
+                }
+                this.className = 'current';
+
+                for (var j = 0; j < item.length; j++) {
+                    item[j].style.display = 'none';
+                }
+                var index = this.getAttribute('index');
+                console.log(index);
+                item[index].style.display = 'block';
+            }
+        }
+    </script> -->
+    <!-- ================================节点下拉菜单 -->
+    <!-- <style>
+        .nav {
+            width: 600px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+        }
+        
+        .box {
+            position: relative;
+            margin-right: 20px;
+            border: 2px solid black;
+        }
+        
+        .box:hover {
+            background-color: aqua;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            border: 1px, solid black;
+        }
+        
+        .list {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            display: none;
+        }
+        
+        .list>li:hover {
+            background-color: aqua;
+        }
+    </style>
+    <div>
+        <ul class="nav">
+            <li class="box">
+                <a href="#">微博</a>
+                <ul class="list">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                    <li>你好</li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">微博</a>
+                <ul class="list">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                    <li>你好</li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">微博</a>
+                <ul class="list">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                    <li>你好</li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">微博</a>
+                <ul class="list">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                    <li>你好</li>
+                </ul>
+            </li>
+
+
+    </div>
+    <script>
+        // var nav = document.querySelector('.nav');
+        // var a = document.querySelector('a')
+        // console.log(nav);
+        // var box = nav.children;
+        // console.log(box);
+        // var li = box[1];
+        // console.log(li);
+        // var list = li.children
+        // console.log(list);
+        // var ok = list[1]
+        // console.log(ok);
+
+        // var box = document.querySelector('.box');
+        // var boxl = document.querySelectorAll('.box');
+        // console.log(boxl.length);
+        // var a = box.firstElementChild;
+        // var lis = box.lastElementChild;
+        // console.log(box);
+        // console.log(lis);
+        // for (i = 0; i < boxl.length; i++) {
+        //     boxl[i].onmouseout = function() {
+        //         lis.style.display = 'none';
+
+        //     }
+        //     boxl[i].onmouseover = function() {
+        //         lis.style.display = 'block';
+        //     }
+        // }
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseout = function() {
+                this.lastElementChild.style.display = 'none';
+
+            }
+            lis[i].onmouseover = function() {
+                this.lastElementChild.style.display = 'block';
+
+            }
+        }
+    </script> -->
+    <!-- ================================== 留言板发言和删除功能 //搞一个敲下enter建发布-->
+    <!-- <style>
+        textarea {
+            width: 200px;
+            height: 200px;
+        }
+        
+        ul {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        li {
+            background-color: aqua;
+            list-style: none;
+        }
+        
+        div {
+            width: 40px;
+            height: 40px;
+            background-color: aqua;
+        }
+        
+        a {
+            float: right;
+        }
+    </style>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <div>删除</div>
+    <ul>
+
+    </ul>
+    <script>
+        var button = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        console.log(text.value);
+        var ul = document.querySelector('ul');
+        var div = document.querySelector('div')
+        var li = document.createElement('li');
+
+        button.onclick = function() {
+            if (text.value == '') {
+                alert('请输入信息');
+                return false;
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = text.value + "<a href = 'javascript:;'> 删除 </a>";
+                // ul.append(li);
+                text.value = '';
+                ul.insertBefore(li, ul.children[0]);
+                var as = document.querySelectorAll('a'); //为啥读不到啊，这一块写的与button同级了，一直获取不到标签，服了
+                console.log(as.length)
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+
+        }
+        div.onclick = function() {
+            ul.removeChild(ul.children[0]);
+        }
+    </script> -->
+    <!-- =============================复制节点+动态生成表格 -->
+    <!-- <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        var lili = ul.children[1].cloneNode(); //空着就是浅拷贝，加true就是深拷贝
+        ul.appendChild(lili);
+    </script> -->
+    <!-- <style>
+        thead td {
+            background-color: gray;
+        }
+    </style>
+    <div>
+        <table cellspace='0'>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>科目</td>
+                    <td>成绩</td>
+                    <td>操作</td>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var dates = [{
+            name: '关羽',
+            subject: '骑射',
+            score: '100',
+        }, {
+            name: '张飞',
+            subject: '骑射',
+            score: '99',
+        }, {
+            name: '赵云',
+            subject: '骑射',
+            score: '97',
+        }, {
+            name: '马超',
+            subject: '骑射',
+            score: '99',
+        }, {
+            name: '姜维',
+            subject: '骑射',
+            score: '89',
+        }, {
+            name: '邓艾',
+            subject: '骑射',
+            score: '86',
+        }, {
+            name: '钟会',
+            subject: '骑射',
+            score: '84',
+        }, {
+            name: '黄忠',
+            subject: '骑射',
+            score: '100',
+        }];
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < dates.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (k in dates[i]) {
+                var td = document.createElement('td');
+                // console.log(k); //属性
+                // console.log(dates[i][k]); //属性值
+                td.innerHTML = dates[i][k];
+                tr.appendChild(td);
+
+            }
+            var td = document.createElement('td');
+            td.innerHTML = "<a href = 'javascript:;'> 删除 </a>";
+            tr.appendChild(td);
+            var as = document.querySelectorAll('a');
+            console.log(tr);
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    tbody.removeChild(this.parentNode.parentNode);
+                }
+            }
+
+        }
+    </script> -->
+    <!-- ==============document.write 创建元素会导致页面全部重绘,innerHTML比createElement更慢 -->
+    <!-- ==========================onclick事件与方法监听注册(绑定事件) -->
+    <!-- <div>
+        <button> 传统方式注册事件</button>
+        <button> 事件监听注册事件 </button>
+        <button>兼容出现的,ie9以上才支持</button>
+    </div>
+    <script>
+        var button = document.querySelectorAll('button');
+        button[0].onclick = function() {
+            alert('传统的传');
+        }
+        button[0].onclick = function() {
+            alert('传统的统');
+        }
+        button[1].addEventListener('click', function() {
+            alert('注册的注');
+        })
+        button[1].addEventListener('click', function() {
+            alert('注册的册');
+        })
+        button[2].attachEvent('onclick', function() {
+            alert('兼容的兼');
+        })
+    </script> -->
+    <!-- =======删除事件，解绑事件与事件对象e.taregt指向问题,阻止默认事件 -->
+    <!-- <div>12</div>
+    <div>23</div>
+    <div>34</div>
+    <a href="https://www.baidu.com">不准跳转</a>
+    <ul>
+        <li>1</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>2</li>
+    </ul>
+    <script>
+        var div = document.querySelectorAll('div');
+        div[0].onclick = function() {
+            alert('我只出现一次');
+            div[0].onclick = null;
+        };
+        div[1].addEventListener('click', fn);
+
+        function fn() {
+            alert('我可以出现两次，但不');
+            div[1].removeEventListener('click', fn);
+        }
+
+        div[2].addEventListener('click', function(e) {
+            console.log(e);
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            console.log(this);
+            console.log(e.target);
+        })
+        var a = document.querySelector('a');
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+        })
+    </script> -->
+    <!-- ==================阻止事件冒泡 事件委派(冒泡的好处)-->
+    <!-- <style>
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        
+        li {
+            border-bottom: 2px solid black;
+        }
+    </style>
+    <div class="father">
+        <div class="son">
+            傻儿子
+        </div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var son = document.querySelector('.son');
+        var father = document.querySelector('.father');
+        son.addEventListener('click', function(e) {
+            alert(1);
+            e.stopPropagation();
+            e.cancelBubble(); //兼容非标准
+        });
+        father.addEventListener('click', function() {
+            alert(1121);
+        })
+        var ul = document.querySelector('ul');
+        var lis = document.querySelectorAll('li');
+        ul.addEventListener('click', function(e) {
+            alert(123123);
+            e.target.style.backgroundColor = 'yellow'
+        })
+    </script> -->
+    <!-- ======================================鼠标+键盘事件 -->
+    <!-- <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-image: url(../image/001.png);
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+    <div>
+
+    </div>
+    <script>
+        document.addEventListener('click', function(e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('======================');
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log('======================');
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+        var div = document.querySelector('div');
+        var body = document.querySelector('body');
+        body.addEventListener('click', function(e) {
+            div.style.top = "'e.clientX'+0px";
+            div.style.left = "'e.clientX'+0px";
+            console.log(top);
+        })
+    </script> -->
+    <!-- <style>
+        img {
+            position: absolute;
+        }
+    </style>
+    <img src="../image/1.jpg" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            // pic.style.top = "x + '0' + px";
+            pic.style.top = y + 'px';
+            // pic.style.left = "y + '0' + px;"
+            pic.style.left = x + 'px';
+            console.log(pic.style.top);
+        })
+    </script> -->
+    <!-- <style>
+
+    </style>
+    <div>
+
+    </div>
+    <script>
+        document.addEventListener('keyup', function(e) {
+            console.log('老板别摸了,唱一会吧');
+            console.log(e.keyCode);
+        });
+        document.addEventListener('keydown', function() {
+            console.log('老板别唱了,摸一会吧');
+        }); //up和down不区分大小写
+        document.addEventListener('keypress', function() {
+            console.log('刁毛别摸了,唱一会吧');
+        });
+    </script> -->
+    <!-- ===============================京东搜索框 -->
+    <!-- <style>
+
+    </style>
+    <input type="text">
+    <script>
+        var inp = document.querySelector('input');
+        document.addEventListener('keyup', function(e) {
+            console.log(e.keyCode);
+            if (e.keyCode === 83) {
+                // inp.style.value = 'sb';
+                inp.focus();
+            }
+        })
+    </script> -->
+    <!-- =============================单号查询 -->
+    <!-- <style>
+        .search {
+            position: relative;
+        }
+        
+        p {
+            background-color: aqua;
+        }
+        
+        .con {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            background-color: red;
+            display: none;
+            font-size: large;
+        }
+        
+        input {
+            position: absolute;
+        }
+    </style>
+    <div class="search">
+        <p>我是酱油</p>
+        <div class="con"></div>
+        <input type="text" placeholder="请输入您的快递" class="jd">
+    </div>
+    <script>
+        var inp = document.querySelector('input');
+        var con = document.querySelector('.con');
+        document.addEventListener('keyup', function(e) {
+            console.log(e.keyCode);
+            if (e.keyCode === 83) {
+                inp.focus();
+                con.style.display = 'block';
+                inp.addEventListener('keyup', function(e) {
+                    con.innerHTML = this.value;
+                })
+            }
+
+        })
+        inp.addEventListener('blur', function() {
+            con.style.display = 'none';
+        })
+        inp.addEventListener('focus', function() {
+            con.style.display = 'block';
+        })
+    </script> -->
+    <!-- ===============================================================BOM window事件-->
+    <!-- <script>
+        // console.log(window.name);
+        var div = document.querySelector('div'); //声明报错，要写下面去变量的作用域
+        window.addEventListener('load', function() {
+            window.addEventListener('resize', function() {
+                console.log(window.innerWidth);
+                if (window.innerWidth < 700) {
+                    console.log('biahuade chidun=');
+                    div.style.display = 'none';
+                }
+            })
+        })
+    </script>
+    <div>
+        13123213
+    </div> -->
+    <!-- =================定时器 自动关闭广告-->
+    <!-- <img src="../image/icon1.jpg" alt="" class="ad">
+    <button>123</button>
+    <script>
+        // var time = setTimeout(callback, 2000);//变量重复
+        var btn = document.querySelector('button');
+
+        function callback() {
+            console.log('dasd');
+        }
+        var ad = document.querySelector('.ad');
+        var time = setTimeout(function() {
+            console.log(123213);
+            ad.style.display = 'none';
+        }, 2000);
+        btn.addEventListener('click', function() {
+            console.log(123);
+            clearTimeout(time);
+        })
+    </script> -->
+    <!-- =================重复调用定时器 -->
+    <!-- <script>
+        setInterval(function() {
+            console.log(2313);
+        }, 2000)
+    </script> -->
+    <!-- <style>
+        span {
+            display: inline-block;
+            width: 50px;
+            line-height: 50px;
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            align-items: center;
+            font-size: larger;
+        }
+    </style>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var time = '2023-02-28 23:35:00'
+        var inputTime = +new Date(time); //不能在后面，报错NAN
+        coutDown(); //先执行不然刷新会有跳动
+        setInterval(coutDown, 1000);
+
+        function coutDown(time) {
+            var nowTime = +new Date();
+            // console.log(nowTime);
+            // var ds = parseInt(nowTime / 60 / 60 / 24);
+            // ds = ds < 10 ? '0' + ds : ds;
+            // var hs = parseInt(nowTime / 60 / 60 % 24);
+            // hs = hs < 10 ? '0' + hs : hs;
+            // var ms = parseInt(nowTime / 60 % 60);
+            // ms = ms < 10 ? '0' + ms : ms;
+            // console.log(ms);
+            // var ss = parseInt(nowTime % 60);
+            // ss = ss < 10 ? '0' + ss : ss;
+            // console.log(ds + '天' + hs + '时' + ms + '分' + ss + '秒');
+            // var inputTime = +new Date(time); //不能在后面，报错NAN
+            // console.log(inputTime);
+            var times = (inputTime - nowTime) / 1000 //没除以1000
+                // console.log(times);
+                // var d = parseInt(times / 60 / 60 / 24);
+                // d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            console.log(m);
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+            // return d + '天' + h + '时' + m + '分' + s + '秒';
+            return h + '时' + m + '分' + s + '秒';
+            console.log("return");
+        }
+        console.log(coutDown('2023-02-28 23:35:00'));
+    </script> -->
+    <!-- ====================开启和关闭定时器 -->
+    <!-- <button>开启定时器</button>
+    <button>关闭定时器</button>
+    <script>
+        var button = document.querySelectorAll('button');
+        var time = null; //全局变量
+        button[0].addEventListener('click', function() {
+            time = setInterval(function() {
+                console.log('hello,word');
+            }, 1000);
+        });
+        button[1].addEventListener('click', function() {
+            clearTimeout(time);
+        })
+    </script> -->
+    <!-- ==========================发送短信案例 -->
+    <!-- <div>
+        手机号码：<input type="text"><button>发送</button>
+    </div>
+    <script>
+        var button = document.querySelector('button');
+        var time = 3;
+        var timer = null;
+        button.addEventListener('click', function() {
+            button.style.disable = 'ture';
+            console.log(123);
+
+            timer = setInterval(function() {
+                if (time === 0) {
+                    button.style.disable = 'false';
+                    time = 3;
+                    button.innerHTML = "发送";
+                    clearInterval(timer)
+                } else {
+                    button.innerHTML = "请等待" + time + "秒";
+                    time--;
+                }
+            }, 1000)
+        })
+    </script> -->
+    <!-- =========================五秒钟之后自动跳转页面 -->
+    <!-- <div>
+        <button>点击</button>
+        <div class="tip"></div>
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+        var tip = document.querySelector('.tip');
+        var time = 5;
+        btn.addEventListener('click', function() {
+            setInterval(function() {
+                if (time == 0) {
+                    location.href = 'http://www.baidu.com'
+                } else {
+                    tip.innerHTML = '页面失效' + time + '秒后跳转主页';
+                    time--;
+                }
+            }, 1000)
+        })
+    </script> -->
+    <!-- ===================登陆界面到首页 locationd的刷新 history前进后退的功能-->
+    <!-- <form action="shouye.html">
+        用户名：<input type="text" name="uname">
+        <input type="submit" value="提交">
+    </form>
+    <button>前进</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            console.log(90);
+            // location.assign("http://www.baidu.com");
+            // location.reload("http://www.baidu.com"); //注意语法，找了半天
+            // location.repalce("http://www.baidu.com");
+            // location.href = 'http://www.baidu.com';
+        })
+        btn.addEventListener('click', function() {
+            history.forward()
+        })
+    </script> -->
+    <!-- ======================offsettop获取元素的位置(获得距离带有定位父元素的位置) -->
+    <!-- <style>
+        div {
+            background-color: aqua;
+            position: relative;
+            top: 100px;
+            left: 222px;
+        }
+        
+        div>div {
+            background-color: blue;
+        }
+    </style>
+    <div>
+        12313
+        <div>
+            son
+        </div>
+    </div>
+    <script>
+        var div = document.querySelectorAll('div');
+        console.log(div[0].offsetTop);
+        console.log(div[0].offsetLeft);
+        console.log(div[1].offsetLeft);
+        console.log(div[0].offsetWidth);
+        console.log(div[1].offsetHeight);
+        console.log(div[1].offsetParent);
+        div[1].style.width = '100px'
+    </script> -->
+    <!-- ===========================获取鼠标属性和拖动模态框 -->
+    <!-- <style>
+        div {
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 30px;
+            left: 40px;
+        }
+    </style>
+    <div>
+        拖动我
+    </div>
+    <script>
+        var box = document.querySelector('div');
+        box.addEventListener('mousedown', function(e) {
+            var x = e.pageX - this.offsetLeft;
+            var Y = e.pageY - this.offsetTop;
+            console.log(x);
+            console.log(Y);
+            box.addEventListener('mousemove', move);
+            document.addEventListener('mouseup', function() {
+                box.removeEventListener('mousemove', move);
+            })
+
+            function move(e) {
+                box.style.top = e.pageY - Y + "px";
+                box.style.left = e.pageX - x + "px";
+                console.log(box.style.top);
+                console.log(box.style.left);
+            }
+        })
+    </script> -->
+    <!-- ======================登录界面的登录框 -->
+    <!-- <style>
+        .screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, 3);
+            opacity: 0.2;
+        }
+        
+        .login {
+            display: none;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-color: aqua;
+        }
+        
+        .screen {
+            z-index: -33;
+        }
+        
+        .title {
+            position: relative;
+            cursor: row-resize;
+        }
+    </style>
+    <div>
+        <h1 class="h">点击登录</h1>
+    </div>
+    <div class="login">
+        <div class="title">登录会员
+            <span class="close"><a href="javascript:void(0);">关闭</a></span>
+        </div>
+        <div>用户名:<input placeholder="请输入用户名"></div>
+        <div>密码:<input placeholder="请输入密码"></div>
+    </div>
+    <div class="screen"></div>
+    <script>
+        var h1 = document.querySelector('.h');
+        var screen = document.querySelector('.screen');
+        var title = document.querySelector('.title');
+        var close = document.querySelector('.close');
+        var login = document.querySelector('.login');
+        h1.addEventListener('click', function() {
+            login.style.display = 'block';
+            screen.style.display = 'block';
+        })
+        close.addEventListener('click', function() {
+            console.log(213);
+            login.style.display = 'none';
+            screen.style.display = 'none';
+        })
+        title.addEventListener('mousedown', function(e) {
+            var x = e.pageX - this.offsetLeft;
+            var Y = e.pageY - this.offsetTop;
+            console.log(x);
+            console.log(Y);
+            title.addEventListener('mousemove', move);
+
+            function move(e) {
+                login.style.top = e.pageY - Y + "px";
+                login.style.left = e.pageX - x + "px";
+                console.log(e.pageX + 'x轴');
+                console.log(e.pageY + 'Y轴');
+                console.log(title.style.top);
+                console.log(title.style.left);
+            }
+            document.addEventListener('mouseup', function() {
+                title.removeEventListener('mousemove', move);
+
+
+            })
+        })
+    </script> -->
+    <!-- ====================放大镜案例 (有缺陷，图片比例不对)-->
+    <!-- <style>
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            top: 40px;
+            left: 40px;
+        }
+        
+        .small {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .mask {
+            position: absolute;
+            background-color: yellow;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            opacity: .5;
+            display: none;
+        }
+        
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 310px;
+            top: 0px;
+            display: none;
+            overflow: hidden;
+            background-color: red;
+        }
+        
+        .bigimage {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <div class="box">
+        <img src="../image/water1.webp" alt="" class="small">
+        <div class="mask">拖动放大</div>
+        <div class="big">
+            <img src="../image/water1.webp" alt="" class="bigimage">
+        </div>
+
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var small = document.querySelector('.small');
+        var big = document.querySelector('.big');
+        var mask = document.querySelector('.mask');
+        box.addEventListener('mouseover', function() {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+        });
+        box.addEventListener('mouseout', function() {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        });
+        box.addEventListener('mousemove', function(e) { //给small加的监听器找了半个小时，鼠标位置一直不对服了
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            console.log(x);
+            console.log(y);
+            var maskX = x - mask.offsetWidth / 2;
+            var maskY = y - mask.offsetHeight / 2;
+            var maskxmax = small.offsetWidth - mask.offsetWidth;
+            var maskYmax = small.offsetHeight - mask.offsetHeight;
+            console.log(maskxmax);
+            if (maskX <= 0) {
+                maskX = 0;
+            } else if (maskX >= maskxmax) {
+                maskX = maskxmax;
+            }
+            if (maskY <= 0) {
+                maskY = 0;
+            } else if (maskY >= maskYmax) {
+                maskY = maskYmax;
+            }
+            mask.style.top = maskY + 'px';
+            mask.style.left = maskX + 'px';
+            console.log(mask.style.left + '左边');
+
+            var bigimg = document.querySelector('.bigimage');
+            var bigmax = big.offsetWidth - bigimg.offsetWidth;
+            var bigx = maskX * bigmax / maskxmax;
+            var bigy = maskY * bigmax / maskxmax;
+            bigimg.style.left = bigx + 'px';
+            bigimg.style.top = bigy + 'px';
+            console.log(bigimg.style.left + '大盒子的边距');
+        })
+    </script> -->
+    <!-- ================client获取元素的大小不包括边框 +立即执行函数 -->
+    <!-- <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: red solid 10px;
+        }
+    </style>
+    <div>
+        12312
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.clientHeight);
+        console.log(div.offsetHeight + '加边框');
+        (function(a, b) {
+            console.log(a + b + '立即执行了');
+        })(1, 2); //少了分号立即执行函数报错
+        //独立创建了作用域，避免了变量冲突
+        (function sum(a, b) {
+            console.log(a + b);
+        }(4, 5))
+    </script> -->
+    <!-- ===========================flexible变量分析 -->
+    <!-- <script>
+        (function flexible(window, document) {
+            var docEl = document.documentElement;
+            var dpr = window.devicePixelRatio || 1; //像素比移动端和pc端不一样
+            function setBodyFontSize() {
+                if (document.body) {
+                    document.body.style.fontSize = (12 * dpr) + 'px';
+                } else {
+                    //设置body的大小
+                    document.addEventListener('DOMContentLoaded', setBodyFontSize)
+                }
+            }
+            setBodyFontSize();
+            //set 1rem = viewWidth/10;
+            function setRemUnit() {
+                var rem = docEl.clientWidth / 10;
+                docEl.style.fontSize = rem + 'px';
+
+            }
+            setRemUnit();
+            //当页面尺寸大小发生变化的时候，要重新设置一下rem的大小
+            window.addEventListener('resize', setRemUnit);
+            //刷新页面触发
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                    setRemUnit()
+                }
+            })
+        }(window, document))
+    </script> -->
+    <!-- =========================scroll系列会将超出部分记录 -->
+    <!-- <style>
+        div {
+            width: 100px;
+            height: 100px;
+            overflow: auto;
+        }
+    </style>
+    <div>
+        技术的垃圾的啦放假咯了酒店房卡啊尽快立法罚款了农村快乐女声念佛为u去
+    </div>
+    <script>
+        var div = document.querySelector('div');
+
+        console.log(div.scrollHeight);
+        div.addEventListener('scroll', function() {
+            console.log(div.scrollTop);
+        })
+    </script> -->
+    <!-- ======================淘宝的固定的导航栏 -->
+    <!-- <style>
+        .header {
+            width: 100%;
+            height: 200px;
+            background-color: aqua;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 500px;
+            background-color: tomato;
+        }
+        
+        .main {
+            width: 100%;
+            height: 1000px;
+            background-color: yellow;
+        }
+        
+        .slider-bar {
+            width: 80px;
+            height: 120px;
+            background-color: violet;
+            position: absolute;
+            right: 0;
+            top: 300px;
+        }
+        
+        .goBack {
+            display: none;
+        }
+    </style>
+    <div class="slider-bar">
+        <span class="goBack">回到顶部</span>
+    </div>
+    <div class="header">头部</div>
+    <div class="banner">banner</div>
+    <div class="main">主体</div>
+    <script>
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+        var bannertop = banner.offsetTop;
+        var maintop = main.offsetTop;
+        var sliderbartop = sliderbar.offsetTop - bannertop;
+        console.log(sliderbartop);
+        console.log(bannertop);
+        document.addEventListener('scroll', function() {
+            if (window.pageYOffset >= bannertop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbartop + 'px';
+
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = 300 + 'px';
+            }
+            if (window.pageYOffset >= maintop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        })
+    </script> -->
+    <!-- =========================mouseover 在子元素中会触发冒泡和mouseenter不会 -->
+    <!-- =======================================动画效果+回调(span的left值一直对不上？？想不出了) -->
+    <!-- <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        span {
+            width: 200px;
+            height: 22px;
+            background-color: tomato;
+            position: relative;
+        }
+    </style>
+    <button class="btn900">点击快跑</button>
+    <button class="btn600">点击快撤</button>
+    <div>
+        <img src="../image/maer.gif" alt="">
+    </div>
+    <span>上等马</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn600 = document.querySelector('.btn600');
+        var btn900 = document.querySelector('.btn900');
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // if(div.style.left>300){//字符串无法比较啊
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer)
+                    if (callback) {
+                        callback(); //回调
+                    }
+                }
+                // obj.style.left = obj.offsetLeft + 5 + 'px'; //匀速运动
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+
+            }, 15)
+        }
+        animate(div, 100);
+        btn900.addEventListener('click', function() {
+            animate(span, 900);
+        });
+        btn600.addEventListener('click', function() {
+            animate(span, 600, function() {
+                span.style.color = 'yellow';
+
+            });
+        })
+    </script> -->
+    <!-- =======================(弹出窗口会使left值不同,视频确实正确的有问题)(更正是fixed定位的问题父相子绝) -->
+    <!-- <script src="../js/animate.js"></script>
+    <style>
+        .slider-bars {
+            width: 20px;
+            height: 200px;
+            position: relative;
+            top: 280px;
+            margin-left: 1300px;
+            background-color: tomato;
+            z-index: 999;
+        }
+        
+        .con {
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: aqua;
+            z-index: -1;
+        }
+    </style>
+    <div class="slider-bars">
+        <span>123</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var slider = document.querySelector('.slider-bars');
+        var con = document.querySelector('.con');
+        slider.addEventListener('mouseenter', function() {
+            animate(con, -120,
+                function() {
+                    slider.children[0].innerHTML = '890'
+                })
+        })
+        slider.addEventListener('mouseleave', function() {
+            animate(con, 0,
+                function() {
+                    slider.children[0].innerHTML = '123'
+                });
+            console.log(123);
+        })
+    </script> -->
+    <!-- ===========================================轮播图 -->
+    <!-- =============================location.sesion和location.history -->
+    <!-- <input type="text" value="">
+    <button class="button1">存储数据</button>
+    <button class="button2">获取数据</button>
+    <button class="button3">删除数据</button>
+    <button class="button4">删除所有数据</button>
+    <script>
+        var inp = document.querySelector('input');
+        var btn1 = document.querySelector('.button1');
+        var btn2 = document.querySelector('.button2');
+        var btn3 = document.querySelector('.button3');
+        var btn4 = document.querySelector('.button4');
+        btn1.addEventListener('click', function() {
+            var val = inp.value;
+            localStorage.setItem('uname', val);
+            localStorage.setItem('psw', val);
+            sessionStorage.setItem('user', val)
+        });
+        btn2.addEventListener('click', function() {
+            var val = inp.value;
+            console.log(localStorage.getItem('uname'));
+            console.log(localStorage.getItem('psw'));
+            console.log(sessionStorage.getItem('user'));
+        });
+        btn3.addEventListener('click', function() {
+            var val = inp.value;
+            localStorage.removeItem('uname', val);
+            // localStorage.removeItem('psw', val);
+            sessionStorage.removeItem('user', val)
+        });
+        btn4.addEventListener('click', function() {
+            var val = inp.value;
+            localStorage.clear('uname', val);
+            localStorage.clear('psw', val);
+            sessionStorage.clear('user', val)
+        })
+    </script> -->
+    <!-- ===============================记住用户名(endss) -->
+    <!-- <input type="text" class="uname">
+    <input type="checkbox" class="remeber">记住用户名
+    <input type="text" class="submit">
+    <button class="ok">提交</button>
+    <script>
+        var uname = document.querySelector('.uname');
+        var remeber = document.querySelector('.remeber');
+        var submit = document.querySelector('.submit');
+        var ok = document.querySelector('.ok');
+        ok.addEventListener('click', function() {
+            localStorage.setItem('uname', submit.value);
+
+        })
+        if (localStorage.getItem('uname')) {
+            uname.value = localStorage.getItem('uname');
+            console.log(localStorage.getItem('uname'));
+            remeber.checked = true;
+        }
+        remeber.addEventListener('change', function() {
+            if (this.checked) {
+                uname.value = localStorage.getItem('uname');
+            } else {
+                localStorage.removeItem('uname');
+                uname.value = localStorage.getItem('uname');
+            }
+        })
+    </script> -->
+</body>
+
+</html>

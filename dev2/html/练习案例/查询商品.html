@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询商品</title>
+</head>
+<style>
+    div {
+        width: 500px;
+        font-size: small;
+    }
+    
+    div>input {
+        width: 50px;
+    }
+    
+    table {
+        width: 500px;
+    }
+</style>
+
+<body>
+    <div class="search">
+        按照价格查询:<input type="text" class="start">-<input type="text" class="end">
+        <button class="search-price">搜索</button> 按照商品名称查询:<input type="text" class="product"><button class="search-pro">查询</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <p></p>
+</body>
+<script>
+    var data = [{
+            id: 1,
+            pname: '小米',
+            price: 2999,
+        }, {
+            id: 2,
+            pname: '华为',
+            price: 1999,
+        }, {
+            id: 3,
+            pname: '荣耀',
+            price: 1299,
+        }]
+        // for (var i = 0; i < data.length; i++) {
+        //     var tr = document.createElement('tr');
+        //     tbody.appendChild(tr);
+        //     for (var j = 0; j < 3; j++) {
+        //         var th = document.createElement('th');
+        //         // th.innerHTML = value.id + value.pname + value.price + "<br>";
+
+    //         tr.appendChild(th);
+    //     }
+    // }
+
+
+
+
+    // ============================do it myself
+    // var tbody = document.querySelector('tbody');
+    // data.forEach(function(value) {
+    //     console.log(value);
+    //     var tr = document.createElement('tr');
+    //     tr.innerHTML = '<th>' + value.id + '</th><th>' + value.pname + '</th><th>' + value.price + '</th>';
+    //     tbody.appendChild(tr);
+    // });
+    // var search_price = document.querySelector('.search-price')
+    // var start = document.querySelector('.start');
+    // var end = document.querySelector('.end');
+    // search_price.addEventListener('click', function() {
+    //     // var tr = document.createElement('tr');
+    //     // tr.parentNode.removeChild(tr);
+    //     tbody.innerHTML = ''; //这样清空数据nb，上面的都搞不定 
+    //     console.log(11)
+    //     data.filter(function(value) {
+    //         if (value.price >= start.value && value.price <= end.value) {
+    //             var tr = document.createElement('tr');
+    //             tr.innerHTML = '<th>' + value.id + '</th><th>' + value.pname + '</th><th>' + value.price + '</th>';
+    //             tbody.appendChild(tr);
+    //         }
+    //     })
+    // })
+
+
+    // 封装函数
+    var tbody = document.querySelector('tbody');
+    var search_price = document.querySelector('.search-price')
+    var start = document.querySelector('.start');
+    var end = document.querySelector('.end');
+    var product = document.querySelector('.product');
+    var search_pro = document.querySelector('.search-pro')
+    setData(data);
+
+    function setData(myDate) {
+        tbody.innerHTML = '';
+        myDate.forEach(function(value) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<th>' + value.id + '</th><th>' + value.pname + '</th><th>' + value.price + '</th>';
+            tbody.appendChild(tr);
+        });
+    }
+    search_price.addEventListener('click', function() {
+        var newData = data.filter(function(value) {
+            return value.price >= start.value && value.price <= end.value;
+        })
+        setData(newData);
+    });
+    search_pro.addEventListener('click', function() {
+        var arr = [];
+        data.some(function(value) {
+            if (value.pname == product.value) {
+                console.log(value);
+                arr.push(value);
+                return true;
+            }
+        })
+        console.log(arr);
+        setData(arr);
+    })
+</script>
+
+</html>

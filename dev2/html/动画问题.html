@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- =======================================动画效果+回调(span的left值一直对不上？？想不出了) -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        span {
+            width: 200px;
+            height: 22px;
+            background-color: tomato;
+            position: relative;
+        }
+    </style>
+    <button class="btn900">点击快跑</button>
+    <button class="btn600">点击快撤</button>
+    <div>
+        <img src="../image/maer.gif" alt="">
+    </div>
+    <span>上等马</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn600 = document.querySelector('.btn600');
+        var btn900 = document.querySelector('.btn900');
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // if(div.style.left>300){//字符串无法比较啊
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer)
+                    if (callback) {
+                        callback(); //回调
+                    }
+                }
+                // obj.style.left = obj.offsetLeft + 5 + 'px'; //匀速运动
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+
+            }, 15)
+        }
+        animate(div, 100);
+        btn900.addEventListener('click', function() {
+            animate(span, 900);
+        });
+        btn600.addEventListener('click', function() {
+            animate(span, 600, function() {
+                span.style.color = 'yellow';
+
+            });
+        })
+    </script>
+</body>
+
+</html>

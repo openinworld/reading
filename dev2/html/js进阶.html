@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js进阶</title>
+</head>
+
+<body>
+    <!-- <button>点击我吧</button>
+    <script>
+        // class Star {//类的使用
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     song(sing) {
+        //         console.log(this.name + sing);
+        //     }
+        // }
+        // var pyy = new Star('彭于晏', 36);
+        // var hg = new Star('胡歌', 37);
+        // console.log(pyy);
+        // console.log(hg);
+        // pyy.song('民国三部曲');
+        // hg.song('仙剑奇侠传');
+
+        // class Father {//super调用父亲的做法
+        //     constructor(x, y) {
+        //         this.x = x;
+        //         this.y = y;
+        //     }
+        //     sum() {
+        //         console.log(this.x + this.y);
+        //     }
+        // }
+        // class Son extends Father {
+        //     constructor(x, y) {
+        //         super(x, y);
+        //     }
+        // }
+        // var son = new Son(22, 11);
+        // son.sum();
+
+        // class Father {
+        //     constructor(x, y) {
+        //         this.x = x;
+        //         this.y = y;
+        //     }
+        //     say() {
+        //         return ('我是你爸爸')
+        //     }
+        //     sum() {
+        //         console.log(this.x - this.y);
+        //     }
+        // }
+        // class Son extends Father {
+        //     constructor(x, y) {
+        //         super(x, y);
+        //         this.x = x;
+        //         this.y = y;
+        //     }
+        //     subtact() {
+        //         console.log(this.x + this.y);
+        //     }
+        //     say() {
+        //         console.log(super.say() + '的儿子');
+        //     }
+        // }
+        // var son = new Son();
+        // var son1 = new Son(7, 2);
+        // son1.subtact();
+        // son1.sum();
+        // son.say();
+
+
+
+        class Father { //this的指向问题.  constructor里的this是指向实例对象，方法里面的this指向调用者
+            //声明一个全局变量that可以将this的实例化对象传导
+            //构造函数和方法最好都带上this，将指向同一对着实例化对象
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.btn = document.querySelector('button');
+                this.btn.addEventListener('click', function() {
+                    alert('是我了，没错');
+                })
+            }
+        }
+        class Son extends Father {
+            constructor(x, y) {
+                super();
+            }
+
+        }
+        // var father = new Father();
+        var son = new Son();
+        
+
+    </script> -->
+    <!-- // 构造函数和原型 -->
+    <!-- <script>
+
+        function star(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sing = function() {
+                console.log(213);
+            };
+
+        }
+        var ldh = new star('彭于晏', 36);
+        var wyz = new star('吴彦祖', 46);
+        ldh.sing();
+        console.log(ldh);
+        // ==============构造函数添加属性
+        star.sex = '男'; //直接添加的属于静态成员
+        console.log(star.sex);
+        console.log(ldh.sex); //静态不能通过实例来访问
+        console.log(ldh.age); //实例成员
+        console.dir(star);
+        console.log(star.prototype);
+        star.prototype.dance = function() {
+            console.log(324234);
+        }
+        console.log(ldh.dance() === wyz.dance());
+        console.log('对象原型和构造函数的原型对象');
+        console.log(ldh._proto_ === star.prototype); //这里是单前后置下划线 false
+        console.log(ldh.__proto__ === star.prototype); //双前后置下划线
+        //方法查找规则，先去原型里找方法sing(),再去prototype里面寻找sing()，最后有一个原型对象的object对象;
+        console.log(star.prototype);
+        console.log(ldh.__proto__);
+        star.prototype = {
+                constructor: star, //可以将原型对象指回构造函数，否则原型对象被更改
+                sing: function() {
+                    console.log('我会眼底那样');
+                },
+                moive: function() {
+                    console.log('djasd');
+                }
+            } //修改了构造原型的函数
+        console.log(star.prototype.constructor);
+        console.log(ldh.__proto__.constructor);
+    </script> -->
+    <!-- =====================构造函数扩展内置对象的方法
+    <script>
+        Array.prototype.sum = function() {
+            var sum = 0;
+            for (var i = 0; i < this.length; i++) {
+                sum += this[i];
+            }
+            return sum;
+        };
+        // Array.prototype = {
+        //         sum: function() {
+        //             var sum = 0;
+        //             for (var i = 0; i < this.length; i++) {
+        //                 sum += this[i];
+        //             }
+        //             return sum;
+        //         },
+        //     } //错误示范覆盖内置对象
+        var arr = [23, 12, 453];
+        console.log(arr.sum());
+        console.log(Array.prototype);
+        var arr1 = new Array(23, 45, 76);
+        console.log(arr1.sum());
+    </script> -->
+    <!-- ==============call()能改变函数的this指向 子类继承父类-->
+    <!-- <script>
+        // function fn(x, y) {
+        //     console.log('123131');
+        //     console.log(this);
+        //     console.log(x + y);
+        // }
+        // var o = {
+        //     name: 'bill'
+        // };
+        // fn.call(); //调用函数
+        // fn.call(o, 1, 2); //改变指向
+
+        function father(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            console.log(this);
+            console.log(this.uname);
+            console.log(this.age);
+            this.sing = function() {
+                console.log('im ok');
+            };
+        }
+        father.prototype.sing = function() {
+            console.log(im.ok);
+        }; //添加共有的方法   
+        function son(uname, age) {
+            father.call(this, uname, age)
+            this.money = function() {
+                console.log('213123');
+            }
+        }; //
+        var son = new son('pyy', 14);
+        // son.prototype = father.prototype //这样会让son的函数流出到father里面
+        son.prototype = new father(); //对象覆盖son的原型，需要用constructor指向原型对象
+        son.prototype.constructor = son;
+        son.prototype.song = function() {
+                console.log(1231);
+            } //为啥要加在原型对象上，共有的方法就直接加载father上啊
+        son.sing();
+        console.log(son.prototype);
+        console.log(father.prototype);
+    </script> -->
+    <!-- ======================字符串 修改对象操作 -->
+    <!-- <script>
+        var str = '  andy   '
+        console.log(str);
+        var str1 = str.trim();
+        console.log(str1); //可以先将表单值处理，
+        //================================
+        var obj = {
+                id: 1,
+                pname: '奥特曼',
+                price: 43,
+            }
+            // obj.num = 100; //添加
+            // obj.price = 99; //修改
+
+        //使用object.defineProperty添加，修改值
+        Object.defineProperty(obj, 'num', {
+            value: 100
+        })
+        Object.defineProperty(obj, 'price', {
+            value: 9.9,
+        })
+        Object.defineProperty(obj, 'id', {
+                writable: false, //不允许修改这个值
+                enumerable: true, //是否可以被枚举
+                configurable: false //能否被修改特性
+            })
+            // delete obj.id
+        Object.defineProperty(obj, 'id', {
+            value: 9,
+        })
+        console.log(obj);
+        //object.keys获取对象的所有属性
+        var arr = Object.keys(obj);
+        console.log(arr);
+    </script> -->
+    <!-- ===================函数的定义 -->
+    <!-- <button>213</button><button>123</button><button>432</button>
+    <script>
+        function fn() {};
+        var fun = function() {}; //函数表达式(匿名函数)
+        var f = new Function('a', 'b', console.log(a + b));
+        f(1, 2);
+        console.log(f instanceof Object);
+        const fn = () => {
+            console.log(1231);
+        }; //箭头函数
+        fn();
+        // ===================函数的调用方式和this指向的问题
+        //1.普通函数 this指向window
+        //2.构造函数 this指向实例的对象
+        //3.对象的方法 this指向对象
+        //4,绑定函数 this绑定的对象
+        //5.定时器函数  window
+        //6.立即执行函数 window
+        // =================该变函数的this指向
+        // 1.call()改变this指向可以继承父类方法(会调用函数)
+        var o = {
+            age: 13
+
+        };
+
+        function father(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        father.call(o, 2, 3);
+        //2.apply()应用 运用的意思，传递参数必须是一个数组
+        function fn(arr) {
+            console.log(this);
+            console.log(arr); //打印出来的是字符串
+        }
+        fn.apply(o, ['pink']);
+        //bind方法改变,不会立即执行,返回一个改变this的新函数,可以修改函数里的被调用的函数指向而且可以把bind的参数this，传回被调用函数这样this都指向对了
+        function text(a, b) {
+            console.log('this');
+            console.log(a + b);
+        }
+        var t = text.bind(o, 3, 5);
+        t();
+        var btn = document.querySelectorAll('button');
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onlick = function() {
+                this.disabled = true;
+                setTimeout(function() {
+                    this.disabled = false;
+                }.bind(this), 2000);
+            }
+        }
+    </script> -->
+    <!-- ==========================严格模式和高阶函数 -->
+    <!-- <script>
+        'use strict'
+        // num = 10;
+        // console.log(num);//报错
+    </script>
+    <script>
+        function t() {
+            'use strict '
+        }
+        //高阶函数,将函数作为参数传回函数
+        function father() {
+            return function son() {
+                console.log(123);
+            }
+        }
+    </script> -->
+    <!-- =================闭包(延申了局部变量的作用范围) -->
+    <!-- <li>猛虎王</li>
+    <li>巨蟹精</li>
+    <li>蝎子鬼</li>
+    <li>红毛狮王</li>
+    <script>
+        function father() {
+            var age = 10;
+
+            // function son() {
+            //     console.log(age); //一个函数调用了另外一个函数的局部变量---闭包函数
+            // }
+            // return son;
+            return function son() {
+                console.log(age);
+            }
+        }
+        var f = father();
+        f();
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function(i) {
+                console.log(i);
+                lis[i].onclick = function() {
+                    console.log(i); //回调函数闭包 
+                }
+            })(i);
+        }
+        // ============闭包的应用打车
+        var car = (function() {
+            var start = 13;
+            var total = 0; //内部变量
+            return {
+                price: function(n) { //闭包
+                    if (n <= 3) {
+                        total = start;
+                    } else {
+                        total = start + (n - 3) * 5;
+                    }
+                    return total;
+                },
+                yd: function(flag) {
+                    return flag ? total + 10 : total
+                }
+            }
+        })();
+
+        console.log(car.price(6));
+        console.log(car.yd(true));
+    </script> -->
+    <!-- ==================递归函数(自己调用自己) -->
+    <!-- <script>
+        var num = 1;
+
+        function fn() {
+            if (num === 4) {
+                return;
+            }
+            num++;
+            console.log('BUNENG');
+            fn();
+        };
+        fn();
+        //递归函数求阶乘
+        function fnn(n) {
+            if (n === 1) {
+                return 1;
+            }
+            return n * fnn(n - 1)
+        }
+        fnn(10);
+        console.log(fnn(3));
+        //求斐波那契数列
+        function fnnn(n) {
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return fnnn(n - 1) + fnnn(n - 2)
+        }
+        console.log(fnnn(9)); //输入序列值就知道是多少
+    </script> -->
+    <!-- ====================递归遍历数据 -->
+    <!-- <script>
+        var data = [{
+            id: 1,
+            name: '家电',
+            goods: [{
+                id: 11,
+                name: '冰箱',
+                goods: [{
+                    id: 111,
+                    name: '海尔'
+                }, {
+                    id: 112,
+                    name: '美的'
+                }, ]
+            }, {
+                id: 12,
+                name: '洗衣机',
+            }]
+
+        }, {
+            id: 2,
+            name: '服装',
+        }];
+
+        function getID(json, id) {
+            var o = {};
+            json.forEach(function(item) {
+                // console.log(item);
+                if (item.id == id) { //全等啊找了半天，一个=号最垃圾的匹配
+                    // console.log(item);
+                    o = item;
+                } else if (item.goods && item.goods.length > 0) {
+                    o = getID(item.goods, id);
+                }
+            });
+            return o;
+
+        }
+        console.log(getID(data, 11));
+        console.log(getID(data, 112));
+        console.log(getID(data, 2));
+
+        getID(data, 2)
+        getID(data, 1)
+        getID(data, 11) 
+    </script>-->
+    <!-- ===========深拷贝和浅拷贝 -->
+    <!-- <script>
+        var obj = {
+            name: 'liud',
+            age: 19,
+            message: {
+                habbit: 'sing'
+            },
+            color: ['red', 'black']
+        }
+        var o = {};
+        // // for (k in obj) {
+        // //     o[k] = obj[k];
+        // // }
+        // // o.message.habbit = 'ok';//影响了obj,浅拷贝只有地址，
+        // Object.assign(o, obj); //一行搞定
+        // console.log(obj);
+        // console.log(o);
+
+        //深拷贝
+        function deepcopy(newobj, oldobj) {
+            for (k in oldobj) {
+                var item = oldobj[k];
+                if (item instanceof Array) {
+                    newobj[k] = [];
+                    deepcopy(newobj[k], item)
+                } else if (item instanceof Object) {
+                    newobj[k] = {};
+                    deepcopy(newobj[k], item)
+                } else {
+                    newobj[k] = item;
+                }
+            }
+        }
+        deepcopy(o, obj);
+        o.message.habbit = 'ok'
+        console.log(o);
+        console.log(obj);
+    </script> -->
+    <!-- =======================正则表达式 -->
+    <!-- <a href="https://www.cnblogs.com/lnlvinso/p/10467941.html">正则表达式</a> -->
+    <!-- ============================var,const,let声明变量的区别 -->
+    <!-- <script>
+        console.log(num);
+        var num = 1999;
+        // console.log(age);
+        const age = 10;
+        // age = 200;
+        console.log(age); //不能修改也不能未定义前声明
+        let year = 2023;
+        year = 2011;
+        console.log(year);
+
+
+        var tmp = new Date();
+
+        function f() {
+            console.log(tmp);
+            if (false) {
+                var tmp = 'hello world';
+            } else {
+                //tmp覆盖全局变量
+            }
+        }
+        f();
+
+        var s = 'hello';
+        for (var i = 0; i < s.length; i++) {
+            console.log(s[i]);
+        }
+
+        console.log(i); //按道理这里i的局部变量不应该出来，没有块级作用域
+
+        function pri() {
+            console.log(num);
+            if (true) {
+                var num = 'wqeip';
+            }
+        }
+        pri();
+        console.log(num);
+
+        function test() {
+
+            const age = 900; //块级作用域
+            console.log(age);
+            for (let age = 0; age < 8; age++)
+                console.log(age); //可以重复
+            // let num = 10;
+            // let num = 20; //不允许重复声明
+            for (const age = 0; age < 8; age++)
+                console.log(age); //不能修改
+        }
+        test(); 
+    </script>-->
+    <!-- ========================数组解构和对象解构 -->
+    <!-- <script>
+        const num = [1, 4, 8, 12, 56];
+        const [a, b, c, d, e] = num;
+        console.log(a);
+        const [q, w, ...z] = num; //剩余参数
+        console.log(z);
+        let obj = {
+            name: '刘德华',
+            age: '66',
+            add: '中国香港',
+        };
+        let {
+            name,
+            age,
+            add
+        } = obj;
+        console.log(age);
+        let sarrow = (a, b) => {
+            console.log('我是箭头函数' + a + '中分' + b + '变量');
+        };
+        let clear = b => console.log('我是箭头函数' + b + '变量');
+        sarrow(1, 99);
+        clear(23);
+
+        function test(m) {
+            console.log(this);
+            if (true) {
+                let arr = () => {
+                    console.log('qweqw')
+                    console.log(this);
+                }
+            }
+        }
+        test(1);
+
+        function test1(m) {
+            console.log(this);
+            let num = 999999;
+            // if (true) {
+            function arr() {
+                console.log(num)
+                console.log(this);
+            }
+            return arr();
+            // }
+        }
+        test1(0);
+        obj = {
+            name: '刘德华',
+            test: function() {
+                console.log(this);
+                var fn = function() {
+                    console.log(this.name + '普通函数');
+                    console.log(this);
+                    console.log('^指向window了');
+                }
+                return fn();
+            },
+            car: b => console.log('我不知道' + this),
+            bicyle: function() {
+                console.log('箭头函数和我保持一致' + this);
+                console.log(this);
+                var fn = () => {
+                    console.log(this.name);
+                    console.log(this);
+                    console.log('^指向obj了');
+
+                }
+                return fn();
+            }
+        }
+        obj.test(); //fn()中的this指向不存在
+        obj.car();
+        obj.bicyle(); //箭头函数只会继承上一个作用域的this指向
+    </script> -->
+    <!-- ====================扩展运算符 -->
+    <!-- <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <script>
+        arr1 = [1, 2, 3];
+        arr2 = [7, 8, 9];
+        arr = [...arr1, ...arr2];
+        arr2.push(...arr1)
+        console.log(arr);
+        console.log(arr2);
+        var divs = document.getElementsByTagName('div');
+        console.log(divs); //伪数组
+        var div = [...divs]; //数组
+        div.push('a');
+        console.log(div);
+        var Arraylike = {
+            "0": "张三",
+            "1": "李四",
+            "2": "王五",
+            "length": "3"
+        }
+        var ary = Array.from(Arraylike); //把json的格式转换为数组
+        console.log(ary);
+        var Arraylike1 = {
+            "0": "1",
+            "1": "2",
+            "2": "3",
+            "length": "3"
+        }
+        var ary1 = Array.from(Arraylike1, item => item * 2); //第二个参数可以加一个函数
+        console.log(ary1);
+        var iron = [{
+            name: 'lucky',
+            index: 1
+        }, {
+            name: 'bill',
+            index: 2
+        }]
+        var iron1 = iron.find((item, index) => item.index = 1);
+        console.log(iron1);
+        let ary12 = [1, 23, 4, 5, 56, 78];
+        let ary23 = ary12.findIndex((value, index) => value > 50); //只查找第一个符合要求的
+        console.log(ary23);
+        let test = ary12.includes(7); //false 判断是否有值
+        console.log(test);
+    </script> -->
+    <!-- ===================模板字符串的扩展方法 -->
+    <!-- 1.可以直接引用 2.能换行 3.可以调用函数
+    <script>
+        var car = {
+            name: '五菱',
+            price: '19999',
+            test: function() {
+                return '我不知道'
+            }
+        }
+        var html = `<div>
+        <span>${car.name}</span>
+        <span>${car.price}</span>
+</div>`;
+        console.log(html);
+        var num = `试试看${car.name}`;
+        var tr = `${car.test()}`;
+        console.log(num);
+        console.log(tr);
+        let str = 'hello  world';
+        var re = str.startsWith('he'); //判断字符串开始和结束，返回布尔值
+        var le = str.endsWith('ldq');
+        console.log('y'.repeat('7')); //字符串重复
+        console.log(re);
+        console.log(le);
+    </script> -->
+    <!-- ========================set数据结构 -->
+    <!-- <script>
+        var ary = new Set();
+        console.log(ary.size);
+        var ary1 = new Set(['a', 'b', 'c']); //数组，数据结构
+        ary1.forEach(value => console.log(value)) //遍历set数据
+        console.log(ary1.size);
+        var s = new Set(['a', 'a', 'c', 'c']);
+        console.log(s.size); //可以去重
+        s.add('q');
+        s.delete('a');
+        console.log(s.has('q'));
+        s.clear();
+        console.log(s);
+    </script> -->
+
+</body>
+
+</html>

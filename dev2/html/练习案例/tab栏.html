@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+<style>
+    main {
+        width: 400px;
+        height: 400px;
+        background-color: steelblue;
+        top: 100px;
+        left: 100px;
+        position: relative;
+        user-select: none;
+    }
+    
+    h1 {
+        line-height: 50px;
+        font-size: large;
+        text-align: center;
+    }
+    
+    .head {
+        width: 100%;
+        height: 50px;
+        background-color: tomato;
+        position: relative;
+    }
+    
+    .info {
+        width: 100%;
+        height: 300px;
+        background-color: green;
+    }
+    
+    ul>li {
+        background-color: yellow;
+        width: 60px;
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .select {
+        background-color: gray;
+    }
+    
+    ul>li>span:first-child {
+        position: relative;
+        top: 20px;
+    }
+    
+    ul>li>span:first-child>input {
+        width: 60%;
+        height: 17px;
+        display: inline-block;
+    }
+    
+    ul>li>span:last-child {
+        cursor: pointer;
+    }
+    
+    .add {
+        position: absolute;
+        right: 5px;
+        top: 15px;
+        width: 20px;
+        height: 20px;
+        background-color: blanchedalmond;
+        text-align: center;
+    }
+    
+    section {
+        height: 250px;
+        width: 90%;
+        background-color: orchid;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        display: none;
+    }
+    
+    .inf-pic {
+        background-color: red;
+        display: block;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>状态栏切换</h1>
+        <div id="box">
+            <div class="head">
+                <ul>
+                    <li class="select">
+                        <span>案例1</span>
+                        <span class="delete">x</span>
+                    </li>
+                    <li>
+                        <span>案例1</span>
+                        <span class="delete">x</span>
+                    </li>
+                    <li>
+                        <span>案例1</span>
+                        <span class="delete">x</span>
+                    </li>
+                    <li>
+                        <span>案例1</span>
+                        <span class="delete">x</span>
+                    </li>
+                </ul>
+                <div class="add">+</div>
+            </div>
+            <div class="info">
+                <section class="inf-pic">
+                    1111
+                </section>
+                <section>
+                    222
+                </section>
+                <section>
+                    333
+                </section>
+                <section>
+                    4444
+                </section>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script>
+    var that;
+    class Tab {
+        constructor(id) {
+            that = this;
+            this.box = document.querySelector(id);
+            this.info = document.querySelector('.info');
+            this.add = this.box.querySelector('.add');
+            this.head = this.box.querySelector('.head');
+            this.ul = this.head.querySelector('ul');
+            this.init();
+        };
+        update() {
+            this.lis = this.box.querySelectorAll('li');
+            this.delete = this.head.querySelectorAll('.delete')
+                // this.ois = this.info.querySelectorAll('section'); //这玩意为啥不识别啊
+            this.section = this.box.querySelectorAll('section');
+            this.span = this.ul.querySelectorAll('li span:first-child');
+            console.log(this.span);
+        };
+        init() {
+            this.update();
+            this.add.onclick = this.addTab;
+            for (var i = 0; i < this.lis.length; i++) {
+                this.lis[i].index = i;
+                this.lis[i].onclick = this.toggleTab;
+                this.delete[i].onclick = this.removeTab;
+                this.span[i].ondblclick = this.editTab;
+                this.section[i].ondblclick = this.editTab;
+            };
+        };
+
+        toggleTab() {
+            console.log(this.index);
+            that.clear();
+            this.className = 'select';
+            that.section[this.index].className = 'inf-pic';
+
+        };
+        clear() {
+            for (var i = 0; i < this.lis.length; i++) {
+                this.lis[i].className = '';
+                that.section[i].className = ''
+            }
+
+        };
+        addTab() {
+            var random = Math.random();
+            that.clear();
+            var li = '<li><span>新增</span><span class="delete">x</span></li>'
+            var section = '<section class="inf-pic">' + random + '</section>'
+            that.ul.insertAdjacentHTML('beforeEnd', li);
+            that.info.insertAdjacentHTML('beforeEnd', section);
+            // that.lis[that.lis.length].click();
+            // console.log(that.lis.length);这里是想让新增的也有点击事件
+            that.init();
+        };
+        removeTab(e) {
+            e.stopPropagation();
+            var dindex = this.parentNode.index
+            console.log(dindex);
+            // that.ul.removeChild(that.lis[dindex]);
+            // that.info.removeChild(that.section[dindex]);
+            that.lis[dindex].remove();
+            that.section[dindex].remove();
+            that.init();
+            if (document.querySelector('.select')) return;
+            if (dindex == 0) return that.lis[0].click();
+            dindex--;
+            //dindex为-1会报错，需要做判断，还有删除中间值不需要往前
+            that.lis[dindex] && that.lis[dindex].click();
+        };
+        editTab() {
+            var str = this.innerHTML;
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty()
+                // this.innerHTML = '<input type="text"/>';
+            this.innerHTML = '<input type="text"/ class="inp">';
+            var ipt = document.querySelector('.inp')
+            console.log(ipt);
+            // var input = this.childern[0]; //为啥他不认识子元素啊啊啊
+            // console.log(input);
+            // input.value = str;
+            ipt.value = str;
+            ipt.select();
+            ipt.onblur = function() {
+                console.log(123);
+                this.parentNode.innerHTML = ipt.value;
+            }
+            ipt.onkeyup = function(e) {
+                if (e.keyCode == 13) {
+                    this.blur();
+                }
+            }
+        };
+    };
+    new Tab('#box');
+</script>
+
+</html>

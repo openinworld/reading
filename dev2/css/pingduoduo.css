@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 0.16rem;
+    box-sizing: border-box;
+}
+.container{
+     padding-bottom: 49px;
+}
+
+#top{
+    width: 3.75rem;
+    height: 1.01rem;
+
+}
+.search{
+    width: 100%;
+    padding: .06rem .14rem;
+    height: 0.38rem;
+    box-sizing: border-box;
+}
+.search  .find{
+    text-align: center;
+    line-height: 00.38rem;
+    border-radius: .08rem;
+    line-height: 0.38rem;
+    background-color: #ededed;
+    color: #9c9c9c;
+   
+    
+}
+.find2{
+    position: relative;
+}
+.search  .find img{
+    margin-right: 0.01rem ;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.search  .find1{
+    position: absolute;
+    right: 0.13rem;
+    top: 0.1rem;
+}
+.nav1{
+    position: relative;
+    overflow: hidden;
+    height: 0.56rem;
+    width: 3.75rem;
+}
+.nav{
+    width:100%;
+    height: 0.65rem;
+    box-sizing: border-box;
+    /* background-color: green; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    padding: 0 0.14rem;
+    /* justify-items: center;
+    align-items: center; */
+    border-bottom: #e0e0e0 0.01rem solid;
+    overflow-y: hidden;
+    overflow-x: scroll; 
+    white-space: nowrap;  
+}
+
+.nav>div:first-child{
+    height: 0.56rem;
+    line-height: 0.56rem;
+    font-weight:bold ;
+    color: #e02e24;
+    border-bottom: 0.02rem solid #e02e24;
+    margin-left: 0rem;
+}
+.nav >div{
+    flex-shrink: 0;
+    margin-left: 0.15rem;
+    display: inline-block;
+}
+
+#bottom{
+    border-bottom: 0.12rem #f4f4f4 solid;
+}
+#bottom .icon{
+    width: 3.75rem;
+    height: 1.71rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+#bottom .icon1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 0.73rem;
+    height: 0.64rem;
+    margin-top: .05rem;
+    font-size: .12rem;
+}
+
+#bottom .icon1>div{
+    font-size: .12rem;
+
+}
+#bottom .icon1>div:first-child{
+    width: 0.73rem;
+    height: 0.39rem;
+    text-align: center;
+}
+
+.service{
+    width: 100%;
+    height: 1.08rem;
+    box-sizing: border-box;
+    padding: 0 0.13rem 0 0.08rem;
+    margin: 00.08rem 0 0 ;
+    display: flex;
+    border-bottom: 0.12rem #f4f4f4 solid;
+
+}
+.service-left {
+    width: 0.64rem;
+    height: .78rem;
+    margin: 0 .03rem 0 .02rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.service-left>div:first-child{
+    width: 0.39rem;
+    height: 0.39rem;
+}
+.service-left img{
+    border: 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: top;
+}
+.service-text{
+    font-size: .14rem;
+    font-weight: 700;
+    line-height: .16rem;
+    color: #151516;
+    margin-bottom: .07rem;
+}
+.service-text1{
+    font-size: .12rem;
+    line-height: .12rem;
+    color: #777;
+}
+.service-middle{
+    width: .06rem;
+    height: .82rem;
+    margin: 0 .03rem 0 .02rem;  
+}
+.service-middle img{
+    border: 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: top;
+}
+
+
+.service-right{
+    display: flex;
+    justify-content: space-between;
+    width: 2.8rem;
+}
+.service-pic{
+    width: 0.64rem;
+    height: 0.82rem;
+}
+.service-pic1{
+    width: 0.64rem;
+    height: 0.64rem;
+    margin-bottom: .04rem;
+}
+.service-pic1 img{
+    border: 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: top;
+}
+.service-pic2{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: .11rem;
+    font-weight: 700;
+    line-height: .14rem;
+    color: #e02e24;
+}
+.service-pic2 i {
+    font-style: normal;
+}
+
+
+
+
+
+
+
+.menucontent{
+    width: 100%;
+    box-sizing: border-box;
+    /* height: 30.35rem; */
+    padding: 0.077rem;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box-pic{
+    width: 1.77rem; 
+    height: 1.77rem;
+    overflow: hidden;
+}
+.box{
+    background-color: white;
+    margin-bottom: .07rem;
+    width: 1.77rem;
+    height: 2.54rem;
+    padding: 0.07rem;
+}
+.box-pic img{
+    width: auto;
+    height: auto;
+    /* vertical-align: top; */
+    max-width: 100%;
+}
+.box-text1 {
+    font-size: .14rem;
+    line-height: .18rem;
+    word-break: break-all;
+    font-family: pingfangsc-regular,stheiti stxihei,microsoft yahei,microsoft jhenghei,miui;
+    overflow: hidden;
+}
+.cheaper>span:first-child{
+    color: rgb(224, 46, 36);
+    background: transparent;
+    padding: 0px;
+    font-size: .12rem;
+    margin-left: 0px;
+}
+.cheaper>span:last-child{
+    color: rgb(156, 156, 156);
+    background: transparent;
+    padding: 0px;
+    margin-left: 0.06rem;
+    font-size: .12rem;
+}
+.perice {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.12rem;
+}
+.perice span:first-child{
+    color: #e02e24;
+    font-size: .13rem;
+    margin-right: .02rem;
+}
+.perice span:last-child{
+    color: #9c9c9c;
+    font-size: .13rem;
+    
+}
+ .perice span:nth-child(2){
+    color: #e02e24;
+    font-weight: 700;
+    line-height: 1;
+    font-size: .12rem;
+
+ }
+.btn{
+    width: 100%;
+    height: 0.49rem;
+    background-color:  white;
+    position: fixed;
+    bottom: 0rem;
+    display: flex;
+    justify-content: space-between;
+    /* padding-top: 0.06rem; */
+}
+.btn-box{
+    width: 0.74rem;
+    height: 0.49rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-box:last-child{
+    bottom: .05rem;
+    font-size: .1rem;
+ 
+    line-height: 1;
+}
+.btn-img{
+    width: 0.23rem;
+    height: 0.23rem;
+}
+.btn-img img{
+    border: 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: top;
+}
