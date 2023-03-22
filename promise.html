@@ -16,7 +16,7 @@
         btn.addEventListener('click', function() {
             const p = new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', 'https://api.apiopen.top/getJoke');
+                xhr.open('GET', 'https://api.apiopen.top/api/sentences');
                 xhr.send();
                 xhr.onreadystatechange = function() {
                     if (xhr.onreadstate === 4) {
