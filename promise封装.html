@@ -8,32 +8,144 @@
     <title>promise封装</title>
     <script src="./promise封装.js"></script>
 </head>
+<button>点击出金句</button>
 
 <body>
     <script>
-        let p = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // resolve('ok');
-                reject('err');
-                // throw 'error';
-            }, 1000);
-        });
-        const res = p.then(value => {
-            // console.log(value);
-            // return 'hello promsie';
-            // return new Promise(resolve, reject)
-            // throw 'fail';
-        }, reason => {
-            // console.log(reason);
-            throw 'fail';
-        });
-        // p.then(value => {
-        //     alert(value);
-        // }, reason => {
-        //     alert(reason);
+        // let p = new Promise((resolve, reject) => {
+        //     // setTimeout(() => {
+        //     // resolve('ok');
+        //     reject('err'); //异步的错误状态返回不了
+        //     // throw 'error';
+        //     // }, 100);
         // });
-        console.log(res);
+        // console.log(p);
+        // const res = p.then(value => {
+        //     console.log(value);
+        //     // return 'hello promsie';
+        //     // return new Promise(resolve, reject)
+        //     // throw 'fail';
+        // }, reason => {
+        //     console.log(reason);
+        //     // throw 'fail';
+        // });
+        // console.log(res);
+        // const del = p.then(
+        //     value => {
+        //         console.log(222);
+        //     }).then(
+        //     value => {
+        //         console.log(333);
+        //     }).catch(reason => {
+        //     console.warn(reason);
+        // });
+        // // console.log(del);
+
+        // const p = Promise.resolve('ok');
+        // const p1 = Promise.resolve(new Promise((resolve, reject) => {
+        //     resolve('success');
+        // }));
+        // // console.log(p);
+        // console.log(p1);
+
+
+        // const s = Promise.reject('ok');
+        // const s1 = Promise.reject(new Promise((resolve, reject) => {
+        //     resolve('err');
+        // }));
+        // console.log(s);
+        // console.log(s1);
+
+
+        // //调用all race方法
+        // const a1 = Promise.resolve(new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('ok');
+        //     }, 100);
+        // }));
+        // const a2 = Promise.resolve('success');
+        // const a3 = Promise.resolve('oh yeah');
+        // let result = Promise.all([a1, a2, a3]);
+        // let res1 = Promise.race([a1, a2, a3]);
+        // console.log(result);
+        // console.log(res1);
+
+
+        //.then函数回调异步执行
+        // const q = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject('oh yeah')
+        //         console.log('111');
+        //     }, 100);
+
+        // });
+        // q.then(vaule => {
+        //     console.log('222')
+        // }, reason => {
+        //     console.log('444');
+        // });
+        // console.log('333');
+        // console.log(Promise.resolve('ok'));
+
+
+        /*//await 和async函数(返回一个promise对象)
+        async function main() {
+            // return 123;
+            // return new Promise((resolve, reject) => {
+            //     resolve('ok')
+            // })
+            throw 'oh no';
+        }
+        console.log(main());
+        
+        async function apple() {
+            let p = new Promise((resolve, reject) => {
+                resolve('fine')
+            })
+            let p1 = new Promise((resolve, reject) => {
+                reject('error')
+            })
+            const res = await p;
+            const res1 = await 10;
+            console.log(res);
+            console.log(res1);
+            //返回错误的Promise对象
+            try {
+                let res3 = await p1;
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        apple();
+        */
+
+
+        /*  
+            //async与await函数结合ajax(读取文件在js里面)
+        */
+        function sendAJAX(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            resolve(xhr.response);
+                        } else {
+                            reject(xhr.status);
+                        }
+                    }
+                }
+            })
+        }
+        // 接口：'https://api.apiopen.top/api/sentences'
+        let btn = addEventListener('click', async function() {
+            let duanzi = await sendAJAX('https://api.apiopen.top/api/sentences');
+            console.log(duanzi);
+        })
     </script>
+
 </body>
 
 </html>
