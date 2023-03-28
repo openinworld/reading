@@ -1,0 +1,18 @@
+@import './variable.sass';
+div {
+    width: 100px;
+    height: 100px;
+    color: $c;
+    p {
+        width: 11px;
+        height: 11px;
+        background-color: red;
+    }
+}
+
+//单行注释
+
+/* 多行注释*/
+
+
+/*! 强力注释*/

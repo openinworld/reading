@@ -12,24 +12,24 @@
 
 <body>
     <script>
-        // let p = new Promise((resolve, reject) => {
-        //     // setTimeout(() => {
-        //     // resolve('ok');
-        //     reject('err'); //异步的错误状态返回不了
-        //     // throw 'error';
-        //     // }, 100);
-        // });
-        // console.log(p);
-        // const res = p.then(value => {
-        //     console.log(value);
-        //     // return 'hello promsie';
-        //     // return new Promise(resolve, reject)
-        //     // throw 'fail';
-        // }, reason => {
-        //     console.log(reason);
-        //     // throw 'fail';
-        // });
-        // console.log(res);
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve('ok');
+                reject('err'); //异步的错误状态返回不了、、、今天测试没问题了
+                // throw 'error';
+            }, 100);
+        });
+        console.log(p);
+        const res = p.then(value => {
+            console.log(value);
+            // return 'hello promsie';
+            // return new Promise(resolve, reject)
+            // throw 'fail';
+        }, reason => {
+            console.log(reason);
+            // throw 'fail';
+        });
+        console.log(res);
         // const del = p.then(
         //     value => {
         //         console.log(222);
