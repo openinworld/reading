@@ -1,0 +1,1 @@
+"use strict";function add(){console.log("ok")}function es(){}add();for(var p=new Promise(function(o,n){n("err")}),_num=0,num=(console.log(_num),100),_loop=(console.log(num),function(o){setTimeout(function(){console.log(o)},100)}),i=0;i<10;i++)_loop(i);
