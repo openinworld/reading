@@ -1,0 +1,1 @@
+"use strict";var xhr2=new XMLHttpRequest,xhr3=(xhr2.open("GET","/my"),xhr2.send(),xhr2.onload=function(){console.log(xhr2.responseText)},new XMLHttpRequest);xhr3.open("GET","/half/abc.php"),xhr3.send(),xhr3.onload=function(){console.log(xhr3.responseText)};
